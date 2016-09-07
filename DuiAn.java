@@ -18,6 +18,10 @@ public class DuiAn {
 		/*est-ce que ça marche ?           grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr*/
 		
 		/*nique sa maman*/
+                
+                /*Est-ce que tu vois ce qui se passe là maintenant???????
+                
+                Je plussoies, nique sa grosse mère la pute*/
 	}
 	
 }
