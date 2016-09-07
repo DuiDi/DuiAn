@@ -5,8 +5,6 @@
  */
 package duian;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author edwin
