@@ -16,6 +16,8 @@ public class cavamarcheroui {
 	 */
 	public static void main(String[] args) {
 		System.out.println("oui oui, ça va marcher");// TODO code application logic here
+		
+		System.out.println("Y a intérêt à ce que ça continue comme ça !");
 	}
 	
 }
