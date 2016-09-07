@@ -15,7 +15,7 @@ public class cavamarcheroui {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-		// TODO code application logic here
+		System.out.println("oui oui, ça va marcher");// TODO code application logic here
 	}
 	
 }
