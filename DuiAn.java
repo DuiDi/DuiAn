@@ -24,7 +24,7 @@ public class DuiAn {
                 Je plussoies, nique sa grosse mère la pute
                 
                 
-                Carlita y el sueno*/
+                Carlita y el sueno para comprar lo todo*/
 	}
 	
 }
