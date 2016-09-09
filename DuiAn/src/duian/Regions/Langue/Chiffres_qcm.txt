@@ -1,0 +1,5 @@
+﻿Que peut signifier le sinogramme 一 ?;Deux_Trois_Un_Quatre;Un ;Comptez le nombre de lignes
+Que peut signifier le sinogramme 二 ?;Un_Deux_Six_Quatre;Deux;Comptez le nombre de lignes
+Que peut signifier le sinogramme 三 ?;Trois_Cinq_Six_Un;Trois;Comptez le nombre de lignes
+Si 十signifie « dix », que peut signifier 十一  ?;Neuf_Dix_Onze_Douze;Dix;Que font « dix » + « un » ?
+Si 十signifie « dix », que peut signifier 二十 ?;Douze_Vingt_Huit_Dix;Vingt; Que font « deux » fois « dix » ?

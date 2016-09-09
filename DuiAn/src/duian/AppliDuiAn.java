@@ -49,6 +49,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonNextQuestion.setVisible(false);
         BoutonRevenirRegion.setVisible(false);
         BoutonValiderCategorie.setVisible(false);
+        PanelReponse.setVisible(false);
         
         //Récupération des régions
         regions = map.GetRegions();
@@ -261,14 +262,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
-        BoutonSud.setLabel("Histoire & Géographie");
+        BoutonSud.setText("Histoire et Géographie");
         BoutonSud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonSudActionPerformed(evt);
             }
         });
 
-        BoutonEst.setLabel("Us & Coutumes");
+        BoutonEst.setText("Us et Coutumes");
         BoutonEst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonEstActionPerformed(evt);
@@ -301,17 +302,24 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(406, 406, 406)
-                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(BoutonRevenirRegion))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addComponent(BoutonNextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(150, 150, 150)
+                                .addComponent(BoutonNextQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(BoutonRevenirRegion)
+                                .addGap(72, 72, 72)))
+                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(BoutonNord))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(BoutonValiderCategorie))
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(BoutonSud)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -322,15 +330,11 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                                         .addGap(17, 17, 17)
                                         .addComponent(BoutonEst))))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(BoutonNord)))
-                        .addGap(28, 28, 28)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(BoutonValiderCategorie)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                                .addContainerGap()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,31 +344,26 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
+                        .addGap(20, 20, 20)
                         .addComponent(BoutonNextQuestion)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BoutonRevenirRegion)))
+                .addGap(41, 41, 41)
+                .addComponent(BoutonNord)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 32, Short.MAX_VALUE)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BoutonValiderCategorie)
-                        .addGap(38, 38, 38))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(BoutonNord)
-                        .addGap(18, 18, 18)
                         .addComponent(BoutonSud)
                         .addGap(18, 18, 18)
                         .addComponent(BoutonEst)
                         .addGap(18, 18, 18)
                         .addComponent(BoutonOuest)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(52, 52, 52))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BoutonValiderCategorie)
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -372,13 +371,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -386,118 +385,6 @@ public final class AppliDuiAn extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BoutonNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNextQuestionActionPerformed
-        
-        //Eléments rendus visibles
-        BoutonIndice.setVisible(true);
-        jTabbedPane1.setVisible(true);
-        LabelNomCategorie.setVisible(true);
-        LabelReponse.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        PanelReponse.setVisible(true);
-        
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
-        
-        BoutonNextQuestion.setText("Question suivante");
-
-        LabelNomCategorie.setText(cat.GetNom());
-        TextAreaQuestion.setText(queries[i]);
-
-        LabelReponse.setText(answers[i]);
-        LabelAidePanda.setText(help[i]);
-
-        CreerItemChoix();
-
-        i++;
-    }//GEN-LAST:event_BoutonNextQuestionActionPerformed
-
-    private void BoutonSudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSudActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
-        
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
-        
-        //Récupération informations par région
-        LabelNomRegion.setText(BoutonSud.getText());
-        ListeCategories.setListData(map.GetRegionSpec(BoutonSud.getText()));
-        ListeCategories.setVisible(true);
-        
-    }//GEN-LAST:event_BoutonSudActionPerformed
-
-    private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
-        
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
-        
-        //Récupération informations par région
-        LabelNomRegion.setText(BoutonNord.getText());
-        ListeCategories.setListData(map.GetRegionSpec(BoutonNord.getText()));
-        ListeCategories.setVisible(true);
-    }//GEN-LAST:event_BoutonNordActionPerformed
-
-    private void BoutonOuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonOuestActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
-        
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
-        
-        //Récupération informations par région
-        LabelNomRegion.setText(BoutonOuest.getText());
-        ListeCategories.setListData(map.GetRegionSpec(BoutonOuest.getText()));
-        ListeCategories.setVisible(true);
-    }//GEN-LAST:event_BoutonOuestActionPerformed
-
-    private void BoutonEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonEstActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
-        
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
-        
-        //Récupération informations par région
-        LabelNomRegion.setText(BoutonEst.getText());
-        ListeCategories.setListData(map.GetRegionSpec(BoutonEst.getText()));
-        ListeCategories.setVisible(true);
-    }//GEN-LAST:event_BoutonEstActionPerformed
-
-    private void BoutonIndiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonIndiceActionPerformed
-        //Eléments rendus visibles
-        PanelAide.setVisible(true);
-        LabelAidePanda.setVisible(true);
-    }//GEN-LAST:event_BoutonIndiceActionPerformed
 
     private void BoutonRevenirRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRevenirRegionActionPerformed
         //Eléments rendus visibles
@@ -512,6 +399,118 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonOuest.setVisible(true);
         BoutonEst.setVisible(true);
     }//GEN-LAST:event_BoutonRevenirRegionActionPerformed
+
+    private void BoutonNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNextQuestionActionPerformed
+
+        //Eléments rendus visibles
+        BoutonIndice.setVisible(true);
+        jTabbedPane1.setVisible(true);
+        LabelNomCategorie.setVisible(true);
+        LabelReponse.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        PanelReponse.setVisible(true);
+
+        //Eléments rendus invisibles
+        BoutonNord.setVisible(false);
+        BoutonSud.setVisible(false);
+        BoutonOuest.setVisible(false);
+        BoutonEst.setVisible(false);
+
+        BoutonNextQuestion.setText("Question suivante");
+
+        LabelNomCategorie.setText(cat.GetNom());
+        TextAreaQuestion.setText(queries[i]);
+
+        LabelReponse.setText(answers[i]);
+        LabelAidePanda.setText(help[i]);
+
+        CreerItemChoix();
+
+        i++;
+    }//GEN-LAST:event_BoutonNextQuestionActionPerformed
+
+    private void BoutonEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonEstActionPerformed
+        //Eléments rendus visibles
+        BoutonNextQuestion.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        BoutonRevenirRegion.setVisible(true);
+        BoutonValiderCategorie.setVisible(true);
+
+        //Eléments rendus invisibles
+        BoutonNord.setVisible(false);
+        BoutonSud.setVisible(false);
+        BoutonOuest.setVisible(false);
+        BoutonEst.setVisible(false);
+
+        //Récupération informations par région
+        LabelNomRegion.setText(BoutonEst.getText());
+        ListeCategories.setListData(map.GetRegionSpec(BoutonEst.getText()));
+        ListeCategories.setVisible(true);
+    }//GEN-LAST:event_BoutonEstActionPerformed
+
+    private void BoutonSudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSudActionPerformed
+        //Eléments rendus visibles
+        BoutonNextQuestion.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        BoutonRevenirRegion.setVisible(true);
+        BoutonValiderCategorie.setVisible(true);
+
+        //Eléments rendus invisibles
+        BoutonNord.setVisible(false);
+        BoutonSud.setVisible(false);
+        BoutonOuest.setVisible(false);
+        BoutonEst.setVisible(false);
+
+        //Récupération informations par région
+        LabelNomRegion.setText(BoutonSud.getText());
+        ListeCategories.setListData(map.GetRegionSpec(BoutonSud.getText()));
+        ListeCategories.setVisible(true);
+
+    }//GEN-LAST:event_BoutonSudActionPerformed
+
+    private void BoutonOuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonOuestActionPerformed
+        //Eléments rendus visibles
+        BoutonNextQuestion.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        BoutonRevenirRegion.setVisible(true);
+        BoutonValiderCategorie.setVisible(true);
+
+        //Eléments rendus invisibles
+        BoutonNord.setVisible(false);
+        BoutonSud.setVisible(false);
+        BoutonOuest.setVisible(false);
+        BoutonEst.setVisible(false);
+
+        //Récupération informations par région
+        LabelNomRegion.setText(BoutonOuest.getText());
+        ListeCategories.setListData(map.GetRegionSpec(BoutonOuest.getText()));
+        ListeCategories.setVisible(true);
+    }//GEN-LAST:event_BoutonOuestActionPerformed
+
+    private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
+        //Eléments rendus visibles
+        BoutonNextQuestion.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        BoutonRevenirRegion.setVisible(true);
+        BoutonValiderCategorie.setVisible(true);
+
+        //Eléments rendus invisibles
+        BoutonNord.setVisible(false);
+        BoutonSud.setVisible(false);
+        BoutonOuest.setVisible(false);
+        BoutonEst.setVisible(false);
+
+        //Récupération informations par région
+        LabelNomRegion.setText(BoutonNord.getText());
+        ListeCategories.setListData(map.GetRegionSpec(BoutonNord.getText()));
+        ListeCategories.setVisible(true);
+    }//GEN-LAST:event_BoutonNordActionPerformed
+
+    private void BoutonIndiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonIndiceActionPerformed
+        //Eléments rendus visibles
+        PanelAide.setVisible(true);
+        LabelAidePanda.setVisible(true);
+    }//GEN-LAST:event_BoutonIndiceActionPerformed
 
     /**
      * @param args the command line arguments
