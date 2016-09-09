@@ -5,16 +5,10 @@
  */
 package duian;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Vector;
-
 /**
  *
  * @author DydyBook
  */
-public class Minijeu extends Categorie{
-    String path = super.path;
+public class Choix {
     
 }

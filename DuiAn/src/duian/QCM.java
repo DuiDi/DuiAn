@@ -13,32 +13,29 @@ import java.io.IOException;
  * @author DydyBook
  */
 public class QCM extends Minijeu{
-    private String[] question   ;
-    private String[] reponse    ;
-    private String[] aide       ;
-    private String[][] choix    ;
+    public String[] question   = new String[5];
+    public String[] reponse   = new String[5] ;
+    public String[] aide       = new String[5];
+    public String[][] choix    = new String[5][4];
     
-    //Initiliation des paramètres
-    public QCM(){
+    //Récupération des données fichier
+    public void SetQCM(String path){
         //Variables locales
         String[] temp      ;
         int i = 0          ;
         
         //Ouverture en lecture d'un fichier
-        try (BufferedReader bufrd = new BufferedReader(new FileReader("/Users/DydyBook/NetBeansProjects/DuiAn/DuiAn/src/duian/langue/clés/clés_qcm.txt"))){
+        try (BufferedReader bufrd = new BufferedReader(new FileReader(path+"_qcm.txt"))){
             
             String ligne                    ;
             
             //Lecture ligne par ligne
             while (((ligne = bufrd.readLine()) != null) && (i<5)) {
-                //byte[] utf8Bytes = ligne.getBytes("UTF8");
-
-                //ligne = new String(utf8Bytes, "UTF8");
                 temp = ligne.split(";")     ; //Découpage de la ligne à chaque point-virgule
                 this.question[i] = temp[0]  ; //Récupération de la première partie de la ligne
-                this.reponse[i] = temp[1]   ; //Récupération de la deuxième partie de la ligne
-                this.choix[i] = temp[2].split("\t"); //Récupération de la troisième partie de la ligne
-                this.aide[i] = temp[3]      ; //Récupération de la quatrième partie de la ligne
+                this.choix[i] = temp[1].split("_"); //Récupération de la deuxième partie de la ligne
+                this.reponse[i] = temp[2]   ; //Récupération de la troisième partie de la ligne
+                this.aide[i] = temp[3]      ; //Récupération de la quatrième partie de la ligne*/
                 
                 i++                         ;
             }
@@ -50,9 +47,9 @@ public class QCM extends Minijeu{
         }
     }
     
-    public String toString(int i){
-        return "Question n°"+i+this.question[i]+"\n"+this.reponse[i]+"\n"+this.choix+"\n"+this.aide+"\n";
-    }
+   /* public String toString(int i){
+        //return "Question n°"+i+this.question[i]+"\n"+this.reponse[i]+"\n"+this.choix+"\n"+this.aide+"\n";
+    }*/
     
     //Methode de validation de l'objet
     @Override
@@ -78,5 +75,25 @@ public class QCM extends Minijeu{
     //Renvoie le tableau de messages d'aide
     public String[] GetAides(){
         return this.aide;
+    }
+    
+    //Modifie le tableau de 
+    public void SetQuestions(String[] s){
+        this.question = s;
+    }
+    
+    //Modifie le tableau de 
+    public void SetReponses(String[] s){
+        this.reponse = s;
+    }
+    
+    //Modifie le tableau de 
+    public void SetChoix(String[][] s){
+        this.choix = s;
+    }
+    
+    //Modifie le tableau de 
+    public void SetAides(String[] s){
+        this.aide = s;
     }
 }

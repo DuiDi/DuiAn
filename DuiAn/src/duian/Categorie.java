@@ -27,13 +27,18 @@ public class Categorie {
         return this.nom;
     }
     
+    //Méthode permettant de récupérer le chemin du dossier de la catégorie
+    public String GetPath(){
+        return this.path;
+    }
+    
     //Méthode permettant de modifier le nom de la catégorie
     public void SetNom(String s){
         this.nom = s;
     }
     
     //Méthode d'affichage des caractéristiques du mini jeu
-    @Override
+   /* @Override
     public String toString(){
         String s = "Dans la catégorie"+this.nom+", il y a :\n";
         
@@ -42,7 +47,7 @@ public class Categorie {
         }
         
         return s;
-    }
+    }*/
     
     //Méthode d'ajout d'un mini-jeu dans le vecteur
     public void AjoutMinijeu(Minijeu mj){
