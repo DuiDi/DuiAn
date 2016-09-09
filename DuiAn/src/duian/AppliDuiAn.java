@@ -78,7 +78,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonValiderCategorie = new javax.swing.JButton();
         BoutonRevenirRegion = new javax.swing.JButton();
         BoutonQuitter = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        ScrollCategorie = new javax.swing.JScrollPane();
         ListeCategories = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,6 +128,8 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         PanelAide.setBackground(new java.awt.Color(255, 204, 204));
 
         LabelAidePanda.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        LabelAidePanda.setAutoscrolls(true);
+        LabelAidePanda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout PanelAideLayout = new javax.swing.GroupLayout(PanelAide);
         PanelAide.setLayout(PanelAideLayout);
@@ -135,14 +137,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             PanelAideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelAideLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelAidePanda, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(LabelAidePanda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         PanelAideLayout.setVerticalGroup(
             PanelAideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAideLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addComponent(LabelAidePanda, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(LabelAidePanda, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -156,6 +158,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         PanelQuestion.setBackground(new java.awt.Color(255, 153, 102));
 
         LabelQuestion.setBackground(new java.awt.Color(255, 153, 153));
+        LabelQuestion.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        LabelQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelQuestion.setAutoscrolls(true);
 
         javax.swing.GroupLayout PanelQuestionLayout = new javax.swing.GroupLayout(PanelQuestion);
         PanelQuestion.setLayout(PanelQuestionLayout);
@@ -192,10 +197,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         .addComponent(ListeChoix, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelAide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(PanelAide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PanelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 62, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +264,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
-        BoutonNextQuestion.setText("Commencer");
+        BoutonNextQuestion.setText("Question suivante");
         BoutonNextQuestion.setName(""); // NOI18N
         BoutonNextQuestion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,7 +293,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane3.setViewportView(ListeCategories);
+        ScrollCategorie.setViewportView(ListeCategories);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -300,29 +308,27 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BoutonQuitter))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
-                                .addComponent(BoutonNord)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BoutonSud)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BoutonEst)
-                                .addGap(28, 28, 28)
-                                .addComponent(BoutonOuest)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(53, 53, 53)
-                                        .addComponent(BoutonValiderCategorie))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTabbedPane1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(96, 96, 96)
+                            .addComponent(BoutonNord)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BoutonSud)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BoutonEst)
+                            .addGap(28, 28, 28)
+                            .addComponent(BoutonOuest)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel7Layout.createSequentialGroup()
+                                    .addComponent(ScrollCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                    .addComponent(BoutonValiderCategorie)
+                                    .addGap(61, 61, 61)))
+                            .addComponent(jTabbedPane1))))
                 .addContainerGap())
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(350, 350, 350)
@@ -347,19 +353,18 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                     .addComponent(BoutonSud)
                     .addComponent(BoutonEst)
                     .addComponent(BoutonOuest))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(0, 161, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BoutonValiderCategorie)
-                        .addGap(48, 48, 48))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BoutonNextQuestion)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(BoutonNextQuestion))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(ScrollCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BoutonValiderCategorie)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -570,17 +575,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelQuestion.setVisible(false);
         PanelQuestion.setVisible(false);
         LabelResultatReponse.setVisible(false);
-        jScrollPane3.setVisible(false);
-    }
-    
-    //Permet de rendre invisible certains éléments au quiz
-    public void SetInvisibleQuiz(){
-      
-    }
-    
-    //Permet de rendre visible certains éléments au menu
-    public void SetVisibleHorsQuiz(){
-        
+        ScrollCategorie.setVisible(false);
     }
     
     //Permet de rendre visible certains éléments au quiz
@@ -598,6 +593,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelQuestion.setVisible(true);
         PanelQuestion.setVisible(true);
         LabelResultatReponse.setVisible(true);
+        ScrollCategorie.setVisible(true);
     }
     
     //Permet de rendre invisible les boutons des régions
@@ -639,9 +635,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     private javax.swing.JPanel PanelAide;
     private javax.swing.JPanel PanelQuestion;
     private javax.swing.JPanel PanelReponse;
+    private javax.swing.JScrollPane ScrollCategorie;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
