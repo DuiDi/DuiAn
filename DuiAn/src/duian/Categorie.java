@@ -13,7 +13,6 @@ import java.util.Vector;
  */
 public class Categorie {
     private String nom;
-    private Vector<Minijeu> jeux = new Vector<Minijeu>();
     protected Boolean Valide; 
     protected String path;
     
@@ -49,10 +48,6 @@ public class Categorie {
         return s;
     }*/
     
-    //Méthode d'ajout d'un mini-jeu dans le vecteur
-    public void AjoutMinijeu(Minijeu mj){
-        this.jeux.add(mj);
-    }
     
     //Méthode permettant de modifier le nom de la catégorie
     public void SetCategorie(String s){

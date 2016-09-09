@@ -52,19 +52,10 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonRevenirRegion.setVisible(false);
         BoutonValiderCategorie.setVisible(false);
         PanelReponse.setVisible(false);
+        LabelQuestion.setVisible(false);
         
         //Récupération des régions
         regions = map.GetRegions();
-        
-        //cat.SetNom("clés");
-        //cat.SetPath(cat.GetNom()+"/"+cat.GetNom());
-        
-        //quiz.SetPath(path+cat.GetPath());
-        //quiz.SetQCM(path+cat.GetPath());
-        
-        cat.AjoutMinijeu(quiz);
-        
-        
         
     }
 
@@ -80,8 +71,6 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TextAreaQuestion = new javax.swing.JTextArea();
         PanelReponse = new javax.swing.JPanel();
         LabelReponse = new javax.swing.JLabel();
         LabelNomCategorie = new javax.swing.JLabel();
@@ -91,6 +80,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         PanelAide = new javax.swing.JPanel();
         LabelAidePanda = new javax.swing.JLabel();
         BoutonIndice = new javax.swing.JButton();
+        LabelQuestion = new javax.swing.JLabel();
         LabelNomRegion = new javax.swing.JLabel();
         BoutonNord = new javax.swing.JButton();
         BoutonOuest = new javax.swing.JButton();
@@ -110,11 +100,6 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 153));
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 51));
-
-        TextAreaQuestion.setColumns(20);
-        TextAreaQuestion.setRows(5);
-        TextAreaQuestion.setEnabled(false);
-        jScrollPane1.setViewportView(TextAreaQuestion);
 
         PanelReponse.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -172,6 +157,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
+        LabelQuestion.setBackground(new java.awt.Color(255, 255, 255));
+        LabelQuestion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -190,8 +178,8 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(33, 33, 33)
                                         .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(LabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(PanelAide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -207,19 +195,15 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(LabelNomCategorie)
+                .addGap(18, 18, 18)
+                .addComponent(LabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BoutonIndice)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PanelAide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)))
+                .addContainerGap()
+                .addComponent(BoutonIndice)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PanelAide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -228,7 +212,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         .addGap(20, 20, 20))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(PanelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(18, Short.MAX_VALUE))))
+                        .addContainerGap(87, Short.MAX_VALUE))))
         );
 
         jTabbedPane1.addTab("Quiz", jPanel1);
@@ -354,11 +338,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(BoutonOuest)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BoutonValiderCategorie)
-                .addGap(48, 48, 48))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BoutonValiderCategorie)
+                        .addGap(48, 48, 48))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -382,60 +368,32 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BoutonRevenirRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRevenirRegionActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(false);
-        LabelNomRegion.setVisible(false);
-        BoutonRevenirRegion.setVisible(false);
-        BoutonValiderCategorie.setVisible(false);
+        SetInvisibleHorsQuiz();//Eléménts rendus invisibles
 
-        //Eléments rendus visibles
-        BoutonNord.setVisible(true);
-        BoutonSud.setVisible(true);
-        BoutonOuest.setVisible(true);
-        BoutonEst.setVisible(true);
+        SetBoutonsRegionsVisibles();
     }//GEN-LAST:event_BoutonRevenirRegionActionPerformed
 
     private void BoutonNextQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNextQuestionActionPerformed
 
-        //Eléments rendus visibles
-        BoutonIndice.setVisible(true);
-        jTabbedPane1.setVisible(true);
-        LabelNomCategorie.setVisible(true);
-        LabelReponse.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        PanelReponse.setVisible(true);
-
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
-
+        SetBoutonsRegionsInvisibles();
+        
         BoutonNextQuestion.setText("Question suivante");
 
         LabelNomCategorie.setText(cat.GetNom());
-        TextAreaQuestion.setText(queries[i]);
+        LabelQuestion.setText(queries[i]);
 
         LabelReponse.setText(answers[i]);
         LabelAidePanda.setText(help[i]);
-
+        LabelAidePanda.setVisible(false);
         CreerItemChoix();
 
         i++;
     }//GEN-LAST:event_BoutonNextQuestionActionPerformed
 
     private void BoutonEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonEstActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
+        SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
 
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
+        SetBoutonsRegionsInvisibles();
 
         //Récupération informations par région
         LabelNomRegion.setText(BoutonEst.getText());
@@ -447,17 +405,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     }//GEN-LAST:event_BoutonEstActionPerformed
 
     private void BoutonSudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSudActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
-
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
+        SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
+        
+        SetBoutonsRegionsInvisibles();
 
         //Récupération informations par région
         LabelNomRegion.setText(BoutonSud.getText());
@@ -469,17 +419,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     }//GEN-LAST:event_BoutonSudActionPerformed
 
     private void BoutonOuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonOuestActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
+        SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
 
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
+        SetBoutonsRegionsInvisibles();
 
         //Récupération informations par région
         LabelNomRegion.setText(BoutonOuest.getText());
@@ -491,17 +433,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     }//GEN-LAST:event_BoutonOuestActionPerformed
 
     private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
-        //Eléments rendus visibles
-        BoutonNextQuestion.setVisible(true);
-        LabelNomRegion.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
+        SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
 
-        //Eléments rendus invisibles
-        BoutonNord.setVisible(false);
-        BoutonSud.setVisible(false);
-        BoutonOuest.setVisible(false);
-        BoutonEst.setVisible(false);
+        SetBoutonsRegionsInvisibles(); 
 
         //Récupération informations par région
         LabelNomRegion.setText(BoutonNord.getText());
@@ -565,6 +499,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     
     //Permet de récupérer le quiz correspondant à la catégorie
     public void GetQuiz(){
+        i = 0;
         //On récupère la catégorie sélectionnée
         cat.SetNom(ListeCategories.getSelectedValue());
         cat.SetPath(path+boutonTemp.getText()+"/"+cat.GetNom());
@@ -577,12 +512,69 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         help = quiz.GetAides();
         
         LabelNomCategorie.setText(cat.GetNom());
-        TextAreaQuestion.setText(queries[i]);
+        LabelQuestion.setText(queries[i]);
 
         LabelReponse.setText(answers[i]);
         LabelAidePanda.setText(help[i]);
         
+        LabelAidePanda.setVisible(false);
         CreerItemChoix();
+    }
+    
+    //Permet de rendre invisible certains éléments au menu
+    public void SetInvisibleHorsQuiz(){
+        BoutonNextQuestion.setVisible(false);
+        LabelNomRegion.setVisible(false);
+        BoutonRevenirRegion.setVisible(false);
+        BoutonValiderCategorie.setVisible(false);
+        BoutonIndice.setVisible(false);
+        jTabbedPane1.setVisible(false);
+        LabelNomCategorie.setVisible(false);
+        LabelReponse.setVisible(false);
+        LabelNomRegion.setVisible(false);
+        PanelReponse.setVisible(false);
+        LabelQuestion.setVisible(false);
+    }
+    
+    //Permet de rendre invisible certains éléments au quiz
+    public void SetInvisibleQuiz(){
+      
+    }
+    
+    //Permet de rendre visible certains éléments au menu
+    public void SetVisibleHorsQuiz(){
+        
+    }
+    
+    //Permet de rendre visible certains éléments au quiz
+    public void SetVisibleQuiz(){
+        BoutonNextQuestion.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        BoutonRevenirRegion.setVisible(true);
+        BoutonValiderCategorie.setVisible(true);
+        BoutonIndice.setVisible(true);
+        jTabbedPane1.setVisible(true);
+        LabelNomCategorie.setVisible(true);
+        LabelReponse.setVisible(true);
+        LabelNomRegion.setVisible(true);
+        PanelReponse.setVisible(true);
+        LabelQuestion.setVisible(true);
+    }
+    
+    //Permet de rendre invisible les boutons des régions
+    public void SetBoutonsRegionsInvisibles(){
+        BoutonNord.setVisible(false);
+        BoutonSud.setVisible(false);
+        BoutonOuest.setVisible(false);
+        BoutonEst.setVisible(false);
+    }
+    
+    //Permet de rendre visible les boutons des régions
+    public void SetBoutonsRegionsVisibles(){
+        BoutonNord.setVisible(true);
+        BoutonSud.setVisible(true);
+        BoutonOuest.setVisible(true);
+        BoutonEst.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BoutonEst;
@@ -597,15 +589,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     private javax.swing.JLabel LabelAidePanda;
     private javax.swing.JLabel LabelNomCategorie;
     private javax.swing.JLabel LabelNomRegion;
+    private javax.swing.JLabel LabelQuestion;
     private javax.swing.JLabel LabelReponse;
     private javax.swing.JList<String> ListeCategories;
     private javax.swing.JList<String> ListeChoix;
     private javax.swing.JPanel PanelAide;
     private javax.swing.JPanel PanelReponse;
-    private javax.swing.JTextArea TextAreaQuestion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
