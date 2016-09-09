@@ -13,10 +13,12 @@ import java.io.IOException;
  * @author DydyBook
  */
 public class QCM extends Minijeu{
-    public String[] question   = new String[5];
-    public String[] reponse   = new String[5] ;
-    public String[] aide       = new String[5];
-    public String[][] choix    = new String[5][4];
+    private String[] question   = new String[5];
+    private String[] reponse   = new String[5] ;
+    private String[] aide       = new String[5];
+    private String[][] choix    = new String[5][4];
+    private int BonnesReponses = 0;
+    
     
     //Récupération des données fichier
     public void SetQCM(String path){
@@ -77,23 +79,36 @@ public class QCM extends Minijeu{
         return this.aide;
     }
     
-    //Modifie le tableau de 
+    //Renvoie le nombre de bonnes réponses
+    public int GetBonnesReponses(){
+        return this.BonnesReponses;
+    }
+    
+    //Modifie le tableau de questions
     public void SetQuestions(String[] s){
         this.question = s;
     }
     
-    //Modifie le tableau de 
+    //Modifie le tableau de réponses
     public void SetReponses(String[] s){
         this.reponse = s;
     }
     
-    //Modifie le tableau de 
+    //Modifie le tableau de choix
     public void SetChoix(String[][] s){
         this.choix = s;
     }
     
-    //Modifie le tableau de 
+    //Modifie le tableau de messages d'aide
     public void SetAides(String[] s){
         this.aide = s;
     }
+    
+    //Modifie le nombre de bonnes réponses
+    public void SetBonnesreponses(int i){
+        this.BonnesReponses += i;
+    }
+    
+    //Permet de remettre à zéro le quiz
+    
 }

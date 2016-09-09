@@ -6,6 +6,7 @@
 package duian;
 
 import java.util.Vector;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,11 +16,7 @@ public class Categorie {
     private String nom;
     protected Boolean Valide; 
     protected String path;
-    
-    //Initialisation de l'instance
-    public Categorie(){
-        
-    }
+    private Totem animal;
     
     //Méthode permettant de récupérer le nom de la catégorie
     public String GetNom(){
@@ -31,23 +28,22 @@ public class Categorie {
         return this.path;
     }
     
+    //Renvoie l'animal du quiz en cours
+    public Totem GetAnimal(){
+        return this.animal;
+    }
+    
     //Méthode permettant de modifier le nom de la catégorie
     public void SetNom(String s){
         this.nom = s;
     }
     
     //Méthode d'affichage des caractéristiques du mini jeu
-   /* @Override
+    @Override
     public String toString(){
-        String s = "Dans la catégorie"+this.nom+", il y a :\n";
-        
-        for(Minijeu mj : this.jeux){
-            s += mj.toString();
-        }
-        
+        String s = "Dans la catégorie"+this.nom+", il y a 5 animaux totems:\n";
         return s;
-    }*/
-    
+    }
     
     //Méthode permettant de modifier le nom de la catégorie
     public void SetCategorie(String s){
@@ -63,4 +59,10 @@ public class Categorie {
     public void SetPath(String s){
         this.path = s;
     }
+    
+    //Permet de modifier l'animal du quiz
+    public void SetAnimal(Totem t){
+        this.animal = t;
+    }
+    
 }
