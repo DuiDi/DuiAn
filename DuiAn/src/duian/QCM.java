@@ -25,12 +25,15 @@ public class QCM extends Minijeu{
         int i = 0          ;
         
         //Ouverture en lecture d'un fichier
-        try (BufferedReader bufrd = new BufferedReader(new FileReader(super.path+"_qcm.doc"))){
+        try (BufferedReader bufrd = new BufferedReader(new FileReader("/Users/DydyBook/NetBeansProjects/DuiAn/DuiAn/src/duian/langue/clés/clés_qcm.txt"))){
             
             String ligne                    ;
             
             //Lecture ligne par ligne
-            while ((ligne = bufrd.readLine()) != null) {
+            while (((ligne = bufrd.readLine()) != null) && (i<5)) {
+                //byte[] utf8Bytes = ligne.getBytes("UTF8");
+
+                //ligne = new String(utf8Bytes, "UTF8");
                 temp = ligne.split(";")     ; //Découpage de la ligne à chaque point-virgule
                 this.question[i] = temp[0]  ; //Récupération de la première partie de la ligne
                 this.reponse[i] = temp[1]   ; //Récupération de la deuxième partie de la ligne
@@ -43,8 +46,12 @@ public class QCM extends Minijeu{
         } 
         //Affichage erreur si erreur
         catch (IOException e) {
-            e.getMessage()                  ; 
+            System.out.println(e.getMessage())                  ; 
         }
+    }
+    
+    public String toString(int i){
+        return "Question n°"+i+this.question[i]+"\n"+this.reponse[i]+"\n"+this.choix+"\n"+this.aide+"\n";
     }
     
     //Methode de validation de l'objet
