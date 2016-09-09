@@ -5,6 +5,7 @@
  */
 package duian;
 
+import java.awt.Button;
 import java.awt.Insets;
 import javax.swing.JButton;
 import java.util.Vector;
@@ -24,6 +25,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     String[] help       ;
     String path = "/Users/DydyBook/NetBeansProjects/DuiAn/DuiAn/src/duian/Regions/";
     String[] regions = new String[4];
+    JButton boutonTemp = new JButton();
             
     //Création objets
     Carte map = new Carte();
@@ -54,27 +56,15 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         //Récupération des régions
         regions = map.GetRegions();
         
-        cat.SetNom("clés");
-        cat.SetPath(cat.GetNom()+"/"+cat.GetNom());
+        //cat.SetNom("clés");
+        //cat.SetPath(cat.GetNom()+"/"+cat.GetNom());
         
         //quiz.SetPath(path+cat.GetPath());
-        quiz.SetQCM(path+cat.GetPath());
+        //quiz.SetQCM(path+cat.GetPath());
         
         cat.AjoutMinijeu(quiz);
         
-        //Récupération des éléments du quiz
-        queries = quiz.GetQuestions();
-        answers = quiz.GetReponses();
-        choices = quiz.GetChoix();
-        help = quiz.GetAides();
         
-        LabelNomCategorie.setText(cat.GetNom());
-        TextAreaQuestion.setText(queries[i]);
-
-        LabelReponse.setText(answers[i]);
-        LabelAidePanda.setText(help[i]);
-        
-        CreerItemChoix();
         
     }
 
@@ -287,6 +277,11 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         jScrollPane3.setViewportView(ListeCategories);
 
         BoutonValiderCategorie.setText("Valider");
+        BoutonValiderCategorie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonValiderCategorieActionPerformed(evt);
+            }
+        });
 
         BoutonRevenirRegion.setText("Revenir au menu");
         BoutonRevenirRegion.addActionListener(new java.awt.event.ActionListener() {
@@ -446,6 +441,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelNomRegion.setText(BoutonEst.getText());
         ListeCategories.setListData(map.GetRegionSpec(BoutonEst.getText()));
         ListeCategories.setVisible(true);
+        
+        //On récupère le bouton cliqué
+        boutonTemp = BoutonEst;
     }//GEN-LAST:event_BoutonEstActionPerformed
 
     private void BoutonSudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSudActionPerformed
@@ -465,7 +463,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelNomRegion.setText(BoutonSud.getText());
         ListeCategories.setListData(map.GetRegionSpec(BoutonSud.getText()));
         ListeCategories.setVisible(true);
-
+        
+        //On récupère le bouton cliqué
+        boutonTemp = BoutonSud;
     }//GEN-LAST:event_BoutonSudActionPerformed
 
     private void BoutonOuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonOuestActionPerformed
@@ -485,6 +485,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelNomRegion.setText(BoutonOuest.getText());
         ListeCategories.setListData(map.GetRegionSpec(BoutonOuest.getText()));
         ListeCategories.setVisible(true);
+        
+        //On récupère le bouton cliqué
+        boutonTemp = BoutonOuest;
     }//GEN-LAST:event_BoutonOuestActionPerformed
 
     private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
@@ -504,6 +507,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelNomRegion.setText(BoutonNord.getText());
         ListeCategories.setListData(map.GetRegionSpec(BoutonNord.getText()));
         ListeCategories.setVisible(true);
+        
+        //On récupère le bouton cliqué
+        boutonTemp = BoutonNord;
     }//GEN-LAST:event_BoutonNordActionPerformed
 
     private void BoutonIndiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonIndiceActionPerformed
@@ -511,6 +517,10 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         PanelAide.setVisible(true);
         LabelAidePanda.setVisible(true);
     }//GEN-LAST:event_BoutonIndiceActionPerformed
+
+    private void BoutonValiderCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValiderCategorieActionPerformed
+        GetQuiz();
+    }//GEN-LAST:event_BoutonValiderCategorieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -551,6 +561,28 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet de créer des boutons de choix
     public void CreerItemChoix(){
         ListeChoix.setListData(choices[i]);
+    }
+    
+    //Permet de récupérer le quiz correspondant à la catégorie
+    public void GetQuiz(){
+        //On récupère la catégorie sélectionnée
+        cat.SetNom(ListeCategories.getSelectedValue());
+        cat.SetPath(path+boutonTemp.getText()+"/"+cat.GetNom());
+        quiz.SetQCM(cat.GetPath());
+        
+        //Récupération des éléments du quiz
+        queries = quiz.GetQuestions();
+        answers = quiz.GetReponses();
+        choices = quiz.GetChoix();
+        help = quiz.GetAides();
+        
+        LabelNomCategorie.setText(cat.GetNom());
+        TextAreaQuestion.setText(queries[i]);
+
+        LabelReponse.setText(answers[i]);
+        LabelAidePanda.setText(help[i]);
+        
+        CreerItemChoix();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BoutonEst;
