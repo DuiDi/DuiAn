@@ -17,13 +17,22 @@ public class Joueur {
     private int nbVies = 3;
     private Vector<Totem> TotemsValidés = new Vector<Totem>();
     
-    @Override
-    public String toString(){
-        String s = "Joueur : "+this.nom+"\nVies restants : "+this.nbVies+"\nTotems obtenus : \n";
-        for(Totem t: this.TotemsValidés){
-            s += t.toString();
+    public Vector<String> ToString(){
+        Vector<String> desc = new Vector<String>();
+        
+        desc.add("Joueur : "+this.nom);
+        
+        if(this.TotemsValidés.isEmpty()){
+            desc.add("Aucun totem obtenu");
         }
-        return s;
+        else{
+            desc.add("Totems obtenus : ");
+            
+            for(Totem t: this.TotemsValidés){
+                desc.add(t.toString());
+            }
+        }
+        return desc;
     }
     
     //Permet d'obtenir le nom du joueur
