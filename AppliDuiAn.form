@@ -59,7 +59,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="BoutonRevenirRegion" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                           <Component id="LabelNomRegion" min="-2" pref="337" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="BoutonQuitter" min="-2" max="-2" attributes="0"/>
@@ -102,7 +102,7 @@
                                   <Component id="BoutonChargerPartie" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jTabbedPane1" min="-2" pref="668" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -153,7 +153,7 @@
                               <Component id="BoutonNouveauJeu" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="BoutonChargerPartie" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="32" pref="71" max="32767" attributes="0"/>
+                          <EmptySpace min="32" pref="59" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jTabbedPane1" pref="0" max="32767" attributes="0"/>
