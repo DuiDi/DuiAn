@@ -14,7 +14,6 @@ import java.util.Vector;
 public class Joueur {
     private String nom;
     private int nbTotemsValidés = 0;
-    private int nbVies = 3;
     private Vector<Totem> TotemsValidés = new Vector<Totem>();
     
     public Vector<String> ToString(){
@@ -45,10 +44,6 @@ public class Joueur {
         return this.nbTotemsValidés;
     }
     
-    //Permet d'obtenir le nombre de vies
-    public int GetNbVies(){
-        return this.nbVies;
-    }
     
     //Permet de modifier le nom du joueur
     public void SetNom(String s){
@@ -60,16 +55,6 @@ public class Joueur {
         this.nbTotemsValidés = i;
     }
     
-    //Permet de modifier le nombre de vie
-    public void SetPlusVie(){
-        this.nbVies++;
-    }
-    
-    //Permet de remettre à zéro les informations du joueur
-    public void Reset(){
-        this.nbTotemsValidés = 0;
-        this.nbVies = 3;
-    }
     
     //Permet d'ajouter un totem au vector
     public void AjoutTotem(Totem t){

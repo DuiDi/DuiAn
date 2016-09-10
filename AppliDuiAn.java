@@ -612,13 +612,15 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet de valider la catégorie une fois dans une région
     private void BoutonValiderCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValiderCategorieActionPerformed
         
+        AffichageSelonRegion();//Affichage des messages selon la région
+        
         //DemarrerJeu = true; //On précise que le quiz de la catégorie commence
         i = 0 ; //On réinitialise i à chaque retour à la catégorie
-        //Obtenir le quizz
-        GetQuiz();
+       
+        GetQuiz();//Obtenir le quizz
         
         //Afficher le totem à obtenir
-        LabelListeCategories.setText("Obtenez le "+cat.GetAnimal().toString());
+        LabelListeCategories.setText(cat.GetAnimal().toString());
         
         //Eléments rendus invisibles
         ScrollTotems.setVisible(false);
@@ -813,18 +815,12 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         }
                     }
                 }
-                
-                if(quiz.GetBonnesReponses() == 5){
-                    gamer.SetPlusVie();
-                    JOptionPane.showMessageDialog(this,"Bravo ! Vous avez gagné 1 vie !\n" + "Il vous reste actuellement " + gamer.GetNbVies()+ " vie(s).", "Yeah!!!!", 2); //Affichage du bonus vie
-                }
             }
             else{//Sinon le joueur a perdu
-                JOptionPane.showMessageDialog(this,"Vous avez eu " +(5-quiz.GetBonnesReponses())+ " mauvaise(s) réponse(s)", "Oups...", 4); //Affichage nombre d'erreurs
+                JOptionPane.showMessageDialog(this,"Vous avez eu " +(5-quiz.GetBonnesReponses())+ " mauvaise(s) réponse(s)", "Oups...", 0); //Affichage nombre d'erreurs
                 
                 CategoriePerdue();
             }
-            //restart();
         }
     }
     
@@ -903,10 +899,12 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         //Variables locales
         String repJoueur = ListeChoix.getSelectedValue();
         Timer timer = new Timer();
+        
+        //Création d'une tâche pour le timer
         TimerTask tache = new TimerTask() {
             @Override
             public void run() {
-                if(i<5){
+                if(i<5){//Le bouton Valider change de nom
                     BoutonValider.setText("Question suivante");//On demande de cliquer sur la question suivante
                 }
                 //Eléments rendus ponctuellement invisibles
@@ -936,7 +934,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                 {
                     LabelResultatReponse.setForeground(Color.BLUE);
                     LabelResultatReponse.setText("Correct !");
-                    quiz.SetBonnesreponses(quiz.GetBonnesReponses()+1);
+                    quiz.SetBonnesreponses();
                 }
                 else
                 {
@@ -956,16 +954,50 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet d'afficher des informations selon la région
     public void AffichageSelonRegion(){
         if(boutonTemp.getText().compareTo(regionNord.GetNom()) == 0){
-            ListeTotems.setListData(regionNord.GetTotems());
+            for(Categorie c: this.regionNord.categories){
+                if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
+                    int rep = JOptionPane.showConfirmDialog(this, "Attention ! Vous avez déjà validé cette catégorie !\nSi vous refaites le quiz, cela perdra les données\n", "Oups",2);
+                        
+                    if(rep == JOptionPane.YES_OPTION){
+                        c.SetValide(false);
+                    }
+                } 
+            }
         }
         else if(boutonTemp.getText().compareTo(regionSud.GetNom()) == 0){
-            ListeTotems.setListData(regionSud.GetTotems());
+            for(Categorie c: this.regionSud.categories){
+                if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
+                    if (c.GetValide()){
+                        int rep = JOptionPane.showConfirmDialog(this, "Attention ! Vous avez déjà validé cette catégorie !\nSi vous refaites le quiz, cela perdra les données\n", "Oups",2);
+                        
+                        if(rep == JOptionPane.YES_OPTION){
+                            c.SetValide(false);
+                        }
+                    }
+                } 
+            }
         }
         else if(boutonTemp.getText().compareTo(regionOuest.GetNom()) == 0){
-            ListeTotems.setListData(regionOuest.GetTotems());
+            for(Categorie c: this.regionOuest.categories){
+                if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
+                    int rep = JOptionPane.showConfirmDialog(this, "Attention ! Vous avez déjà validé cette catégorie !\nSi vous refaites le quiz, cela perdra les données\n", "Oups",2);
+                        
+                    if(rep == JOptionPane.YES_OPTION){
+                        c.SetValide(false);
+                    }
+                } 
+            }
         }
         else if(boutonTemp.getText().compareTo(regionEst.GetNom()) == 0){
-            ListeTotems.setListData(regionEst.GetTotems());
+            for(Categorie c: this.regionEst.categories){
+                if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
+                    int rep = JOptionPane.showConfirmDialog(this, "Attention ! Vous avez déjà validé cette catégorie !\nSi vous refaites le quiz, cela perdra les données\n", "Oups",2);
+                        
+                    if(rep == JOptionPane.YES_OPTION){
+                        c.SetValide(false);
+                    }
+                } 
+            }
         }
     }
     
