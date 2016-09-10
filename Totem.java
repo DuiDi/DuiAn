@@ -23,7 +23,7 @@ public class Totem {
     
     @Override
     public String toString(){
-        String s = "Totem : "+this.nom+" ";
+        String s = "Trésor : "+this.nom+" ";
         
         if(this.element.compareTo("Eau") == 0){
             s += "de l'eau";
