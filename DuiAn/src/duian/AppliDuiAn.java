@@ -5,12 +5,11 @@
  */
 package duian;
 
-import java.awt.Button;
 import java.awt.Color;
-import java.awt.Insets;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.util.Vector;
-import javax.swing.JOptionPane;
+import javax.swing.JLabel;
+
 
 /**
  *
@@ -25,12 +24,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     String[] answers    ; //Tablea global des réponses
     String[][] choices  ; //Tableau global des choix multiples
     String[] help       ; //Tableau global des messages d'aide pour les questions
-    String path = "/Users/DydyBook/NetBeansProjects/DuiAn/DuiAn/src/duian/Regions/";//Chemin absolu d'accès aux fichiers, à modifier selon le chemin de l'utilisateur
+    String path = "C:\\Users\\edwin\\Documents\\NetBeansProjects\\DuiAn\\DuiAn\\src\\duian\\Regions";//Chemin absolu d'accès aux fichiers, à modifier selon le chemin de l'utilisateur
     String[] regions = new String[4]; //Tableau global des régions
     JButton boutonTemp = new JButton(); //JButton récupérant les informations sur le bouton sur lequel le joueur à cliquer
     Boolean BoutonValiderCliqué;    //Précise si le bouton "Valider" a été cliqué 
     Boolean BoutonQuestionSuivanteCliqué; //Précise si le bouton "Question suivante" a été cliqué 
-    
+    private JLabel Background;
+	private ImageIcon ImgBackground;
+	
     //Création objets
     Carte map = new Carte();
     Joueur gamer = new Joueur();
@@ -46,7 +47,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
      */
     public AppliDuiAn() {
         initComponents();
-        
+		
+        Background = new JLabel();
+		ImgBackground = new ImageIcon("img\\menu.png");
+		Background.setIcon(ImgBackground);
+		Background.setBounds(0, 0, 1280, 800);
+		this.getContentPane().add(Background);
+		
         LabelNomRegion.setText("Bienvenue dans le jeu Dui'An!");//Titre de menu
         
         SetInvisibleHorsQuiz();//Eléments à rendre invisible hors quiz
@@ -72,6 +79,8 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         regionSud.SetTotemsParCategorie("Phénix");
         regionEst.SetTotemsParCategorie("Dragon");
         regionOuest.SetTotemsParCategorie("Tigre");
+		
+		
     }
 
     /**
@@ -290,7 +299,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
 
         LabelNomRegion.setFont(new java.awt.Font("Lucida Grande", 1, 20)); // NOI18N
         LabelNomRegion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelNomRegion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(153, 153, 153)));
+        LabelNomRegion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 11), new java.awt.Color(153, 153, 153))); // NOI18N
 
         BoutonNord.setActionCommand("Langue");
         BoutonNord.setLabel("Langue");
@@ -365,7 +374,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addGap(58, 58, 58)
                         .addComponent(BoutonRevenirRegion)
                         .addGap(102, 102, 102)
                         .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,7 +387,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                         .addComponent(BoutonSud)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BoutonEst)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BoutonOuest)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -404,13 +413,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BoutonRevenirRegion)
-                            .addComponent(BoutonQuitter))))
+                            .addComponent(BoutonQuitter)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonNord)
