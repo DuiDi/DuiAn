@@ -47,7 +47,6 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     Categorie cat = new Categorie();
     QCM quiz = new QCM();
     
-    
     /**
      * Creates new form AppliDuiAn
      */
@@ -129,13 +128,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1000, 462));
 
         jPanel7.setBackground(new java.awt.Color(255, 232, 37));
+        jPanel7.setForeground(new java.awt.Color(255, 255, 255));
         jPanel7.setAutoscrolls(true);
         jPanel7.setPreferredSize(new java.awt.Dimension(1200, 462));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 153));
         jTabbedPane1.setAutoscrolls(true);
 
-        jPanel1.setBackground(new java.awt.Color(249, 44, 142));
+        jPanel1.setBackground(new java.awt.Color(249, 123, 12));
         jPanel1.setAutoscrolls(true);
 
         LabelNomCategorie.setBackground(new java.awt.Color(255, 232, 37));
@@ -145,10 +145,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelNomCategorie.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         LabelNomCategorie.setOpaque(true);
 
-        ListeChoix.setBackground(new java.awt.Color(249, 44, 142));
         ListeChoix.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         ListeChoix.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
-        ListeChoix.setForeground(new java.awt.Color(255, 255, 255));
+        ListeChoix.setForeground(new java.awt.Color(249, 90, 23));
         ListeChoix.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
 
         BoutonSauvegarder.setText("Sauvegarder");
@@ -158,18 +157,19 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
+        LabelResultatReponse.setBackground(new java.awt.Color(255, 255, 255));
         LabelResultatReponse.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         LabelResultatReponse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelResultatReponse.setOpaque(true);
 
-        LabelReponse.setBackground(new java.awt.Color(203, 255, 204));
+        LabelReponse.setBackground(new java.awt.Color(255, 232, 37));
         LabelReponse.setFont(new java.awt.Font("Lucida Grande", 3, 13)); // NOI18N
         LabelReponse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelReponse.setText("Réponse");
         LabelReponse.setOpaque(true);
 
         LabelNumQuestion.setFont(new java.awt.Font("Myanmar MN", 0, 14)); // NOI18N
-        LabelNumQuestion.setForeground(new java.awt.Color(51, 51, 255));
+        LabelNumQuestion.setForeground(new java.awt.Color(255, 255, 255));
         LabelNumQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         LabelQuestion.setBackground(new java.awt.Color(255, 226, 177));
@@ -177,7 +177,6 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelQuestion.setForeground(new java.awt.Color(255, 255, 255));
         LabelQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelQuestion.setAutoscrolls(true);
-        LabelQuestion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         BoutonValiderQuestion.setBackground(new java.awt.Color(106, 147, 160));
         BoutonValiderQuestion.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
@@ -198,7 +197,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         });
 
         LabelAidePanda.setBackground(new java.awt.Color(255, 204, 204));
-        LabelAidePanda.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        LabelAidePanda.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         LabelAidePanda.setAutoscrolls(true);
         LabelAidePanda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LabelAidePanda.setOpaque(true);
@@ -209,36 +208,31 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(LabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ListeChoix, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)))
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BoutonSauvegarder)
+                    .addComponent(BoutonValiderQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(LabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(ListeChoix, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BoutonSauvegarder)
-                            .addComponent(BoutonValiderQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(LabelResultatReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LabelAidePanda, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(LabelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGap(20, 20, 20)
+                                .addComponent(LabelResultatReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(LabelAidePanda, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(80, 80, 80))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(LabelNumQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(98, 98, 98))
+                .addGap(90, 90, 90))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +241,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelNumQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BoutonSauvegarder)
@@ -256,22 +250,23 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(LabelResultatReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 32, Short.MAX_VALUE))
                             .addComponent(LabelAidePanda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(LabelQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(27, 27, 27)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addGap(41, 41, 41)
                         .addComponent(BoutonValiderQuestion))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ListeChoix, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(ListeChoix, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
                         .addComponent(LabelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Quiz", jPanel1);
@@ -351,12 +346,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
-        ListeCategories.setBackground(new java.awt.Color(204, 177, 208));
+        ListeCategories.setBackground(new java.awt.Color(255, 204, 204));
         ListeCategories.setFont(new java.awt.Font("Kohinoor Telugu", 0, 14)); // NOI18N
         ScrollCategorie.setViewportView(ListeCategories);
 
-        ListeEtatJoueur.setBackground(new java.awt.Color(255, 204, 153));
+        ListeEtatJoueur.setBackground(new java.awt.Color(249, 123, 12));
         ListeEtatJoueur.setFont(new java.awt.Font("Malayalam MN", 0, 15)); // NOI18N
+        ListeEtatJoueur.setForeground(new java.awt.Color(0, 51, 51));
         ScrollEtatJoueur.setViewportView(ListeEtatJoueur);
 
         LabelEtatJoueur.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
@@ -396,9 +392,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                                 .addComponent(BoutonRevenirRegion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BoutonRetourCategorie)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 81, Short.MAX_VALUE)))
                         .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                         .addComponent(BoutonQuitter))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,7 +426,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(BoutonValiderCategorie)))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -501,6 +497,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonRetourMenu.setVisible(true);
         
         SetBoutonsMenuInvisible();
+        SetBoutonsCategorieVisible();
         
         LabelNomRegion.setText("Joueur : "+gamer.GetNom());//Affichage nom du joueur
         
@@ -576,16 +573,16 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet de rentrer dans les catégories de la région Langue
     private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
         
+        ResetQuiz();
         SetBoutonsCategorieVisible();//Affichage catégorie
         SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
-
+       
         SetBoutonsRegionsInvisibles(); 
 
         //Récupération informations par région
         LabelNomRegion.setText(BoutonNord.getText());
         ListeCategories.setListData(map.GetRegionSpec(BoutonNord.getText()));
         LabelListeCategories.setText("Trésors : Tortues");
-        ListeCategories.setVisible(true);
         
         //On récupère le bouton cliqué
         boutonTemp = BoutonNord;
@@ -647,19 +644,18 @@ public final class AppliDuiAn extends javax.swing.JFrame {
 
     private void BoutonSauvegarderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSauvegarderActionPerformed
         
+      //Création fichier
         File fichier = new File(cheminDossierPseudo+gamer.GetNom()+".ser");
-        
+       
         //Si le fichier n'existe pas
         if(!fichier.exists()){
             Sauvegarde(gamer.GetNom(), gamer);
         }
-        else{
-            JOptionPane.showConfirmDialog(this,"Une partie a déjà été sauvegardée pour ce pseudo!\nSi vous souhaitez sauvegarder la partie en cours, cliquez sur OK. Sinon annulez l'opération", "Oh...", 3);
-            
+        else{           
             //On demande au joueur s'il souhaite conserver ou non l'ancienne sauvegarde
-            int res = JOptionPane.showConfirmDialog(this,"Une partie a déjà été sauvegardée pour ce pseudo!\nSi vous souhaitez sauvegarder la partie en cours, cliquez sur OK. Sinon annulez l'opération", "Oh...", 3);
-            
-            if(res == JOptionPane.OK_OPTION){
+            int res = JOptionPane.showConfirmDialog(this,"OK pour écraser le fichier!\n");
+   
+            if(res == JOptionPane.YES_OPTION){
                 Sauvegarde(gamer.GetNom(), gamer);
             }
             else{
@@ -675,19 +671,17 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         
         //Création fichier
         File fichier = new File(cheminDossierPseudo+nom+".ser");
-        //JOptionPane.showInputDialog("Votre pseudo : ");
+        
+        //Création objet Joueur
         Joueur j = new Joueur();
         
+        //Si le fichier existe
         if(fichier.exists()){
-            //JOptionPane.showInputDialog("Votre meudo : ");
-            j = Chargement(nom);
-            
-           gamer = j;
-           BoutonNouveauJeu.setText("Reprendre partie");
-            jeuChargé = true;
+           gamer = Chargement(nom);//Renvoie par la fonction d'un objet Joueur existant
+      
         }
         else{
-            JOptionPane.showInputDialog("Votre jeudo : ");
+            JOptionPane.showMessageDialog(this,"Aucune partie pour ce pseudo", "Désolé, pseudo introuvable", 0);
         }
     }//GEN-LAST:event_BoutonChargerPartieActionPerformed
 
@@ -695,6 +689,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonRetourMenu.setVisible(false);//Retrait bouton
         SetBoutonsMenuVisible();
         AfficheEtatJeu();//Affiche informations joueur
+        jeuChargé = false;//Bouton Nouveau Jeu reprend son nom
     }//GEN-LAST:event_BoutonRetourMenuActionPerformed
 
     private void BoutonRetourCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourCategorieActionPerformed
@@ -899,14 +894,12 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelAidePanda.setVisible(false);
         BoutonIndice.setVisible(false);
         jTabbedPane1.setVisible(false);
-        ListeCategories.setVisible(false);
-        LabelListeCategories.setVisible(false);
-        LabelNomCategorie.setVisible(false);
         LabelReponse.setVisible(false);
         BoutonRevenirRegion.setVisible(false);
-        BoutonValiderCategorie.setVisible(false);
         LabelQuestion.setVisible(false);
         LabelResultatReponse.setVisible(false);
+        LabelListeCategories.setVisible(false);
+        BoutonValiderCategorie.setVisible(false);
         ScrollCategorie.setVisible(false);
         ListeEtatJoueur.setVisible(false);
         LabelEtatJoueur.setVisible(false);
@@ -935,6 +928,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         BoutonSud.setVisible(false);
         BoutonOuest.setVisible(false);
         BoutonEst.setVisible(false);
+        BoutonRetourCategorie.setVisible(false);
     }
     
     //Permet de rendre visible les boutons des régions
@@ -1068,23 +1062,18 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet de créer un joueur
     public void CreerJoueur(){
         Boolean ok = false; //Flag
+        String nom = "";//Nom temporaire
         
         if (!jeuChargé) {
             while (!ok){
                 //Récupération pesudo joueur
-                String nom = JOptionPane.showInputDialog(this, "Entrez un pseudo", "Création pseudo", 3);
+                nom = JOptionPane.showInputDialog(this, "Entrez un pseudo", "Création pseudo", 3);
 
                 //Si le pseudo est valide, on sort de la boucle
                 if (nom.compareTo("") != 0)
                 {
                     ok = true;
-                    JOptionPane.showMessageDialog(this,"Bienvenue " +nom + "!\nVous pouvez désormais jouer !", "Pseudo créé !", 1);
-                    gamer.SetNom(nom);    //On donne un nom à l'objet Joueur créé
                     
-                    SetBoutonsMenuInvisible();
-                    
-                    SetBoutonsRegionsVisibles();
-                    AfficheEtatJeu();//Affichage informations joueur
                 }
                 else
                 {
@@ -1092,6 +1081,30 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                 }
             }
             ok = false; //On remet le flag à faux
+            
+            File fichier = new File(cheminDossierPseudo+nom+".ser");
+            
+            if(fichier.exists()){
+                //On demande au joueur s'il souhaite récupérer son ancienne partie
+                int res = JOptionPane.showConfirmDialog(this,"OK pour récupérer votre partie");
+                if(res == JOptionPane.YES_OPTION){
+                    gamer = Chargement(nom);
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Joueur " +nom+ ", aucune partie n'a été sauvegardée!", "Ancienne sauvegarde conservée!", 1);
+                    JOptionPane.showMessageDialog(this,"Aucune partie récupérée.\nCréez un autre pseudo", "Aucune partie chargée", 1);
+                    CreerJoueur();
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Bienvenue " +nom + "!\nVous pouvez désormais jouer !", "Pseudo créé !", 1);
+                gamer.SetNom(nom);    //On donne un nom à l'objet Joueur créé
+
+                SetBoutonsMenuInvisible();
+
+                SetBoutonsRegionsVisibles();
+                AfficheEtatJeu();//Affichage informations joueur
+            }
         }
     }
     
@@ -1142,8 +1155,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             fichierEntree.close();
            
            //Message de chargement réussi
-           JOptionPane.showMessageDialog(this,"Joueur " + j.GetNom() + ", votre partie est chargé!", "Chargement réussi!",1);
-    
+           JOptionPane.showMessageDialog(this,"Joueur " + j.GetNom() + ", votre partie est chargée!", "Chargement réussi!",1);
+           BoutonNouveauJeu.setText("Reprendre partie");//Bouton change de nom
+           jeuChargé = true;//On précise que la partie est chargée
         }
         catch(IOException e){
             e.getMessage();
