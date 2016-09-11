@@ -1,0 +1,5 @@
+Si le poussin est « huang », que signifie « huang » ?;Bleu_Vert_Jaune_Rouge ;Jaune;L’empereur jaune se dit « huang di »
+Si une feuille est « lu », que signifie « lu » ?;Bleu_Jaune_Noir_Vert;Vert;Le thé vert se dit « lu cha »
+Si l’encre est « hei », que signifie « hei » ?;Blanc_Noir_Vert_Rose;Noir;Le sinogramme pour « encre » (墨) est composé de la clé (黑) « noir » et de la clé (土) « terre »
+Si le ciel est « lan », que signifie « lan » ?;Bleu_Rouge_Jaune_Vert ;Bleu;Le Bluetooth se traduit comme « lan ya », qui veut dire « dent bleue »
+Si la neige est «bai », que signifie « bai » ?;Vert_Bleu_Jaune_Blanc;Blanc;La journée se traduit par « bai tian », qui signifie « ciel blanc » ou « ciel clair »

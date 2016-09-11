@@ -1,0 +1,5 @@
+﻿Au Sichuan, il y a un ensemble de sanctuaires en l'honneur d'un animal, quel est-il ?;Singe doré_Grand Panda_Daim_Eléphant;Grand Panda; Il se nourrit essentiellement de bambou.
+Combien de temps a duré la construction de la Grande Muraille ?;Environ 2000 ans_Environ 1000 ans_Environ 1500 ans_Environ 500 ans;Environ 1000 ans; Construction débutée au IIIe av. J.-C. et achevée au XIIe siècle.
+En 1974, le tombeau de l'empereur Qin Shi Huang Di a été trouvé, avec lui, les statues d'une armée de milliers de soldats. En quelle matière sont-ils ?;Bois_Terre cuite_Bronze_Pierre;Terre cuite; On l'appelle aussi l'"armée d'argile".
+Sur quel fleuve le barrage des Trois-Gorges a-t-il été construit entre 2006 et 2009 ?;Huang He_Chang Jiang_Yangzi Jiang_Zhu Jiang;Yangzi Jiang; Yangzi Jiang est aussi appelé "fleuve Bleu".
+Le palais d'été de Pékin est classé au patrimoine de l'UNESCO,  tant pour ses bâtiments que ses jardins. Quand a-t-il été construit ?;1650_1750_1850_1950;1750; En 1860, 110ans après sa construction, il est détruit par la guerre, mais il sera rapidement reconstruit à l'identique.

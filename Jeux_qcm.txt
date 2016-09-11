@@ -1,0 +1,5 @@
+﻿"下棋" (qiaqi) est la traduction de quel jeu occidental ?;Jeu d'échecs_Jeu de dames_Jeu de go_Jeu de tarot;Jeu d'échecs; Il y a une reine, un roi, des cavaliers, fous, pions…
+Laquelle de ses propositions ne fait pas partie des types de pions aux échecs chinois "象棋" xiangqi ?;Gardes_Général_Maire_Soldats;Maire; C'est un jeu basé sur les éléments militaires.
+Comment s'appelle le jeu chinois le plus connu ?;Xiangqi_Mahjong_Xiaqi_Hua pian; Il en existe une variante très répandu sur ordinateur.
+C'est le plus ancien jeu de stratégie combinatoire abstrait connu, on doit gagner des territoires en déposant des pierres sur un plateau. Quel est son nom ?;Le jeu de go_Le jeu de gnau_Gongzhu_Mahjong;Le jeu de go; Le plateau sur lequel on joue s'appelle un goban.
+Ce jeu chinois, qui ressemble aux pogs, consiste à taper une carte avec une peinture d'un côté et un mot de l'autre du plat de la main pour qu'elle se retourne. Quel est-il ?;Hua pian_Menko_Gong zhu_Sheng ji;Hua pian; Le nom vient de 画hua "peinture" et 片pian.

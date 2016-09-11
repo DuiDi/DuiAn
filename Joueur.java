@@ -11,7 +11,7 @@ import java.util.Vector;
  *
  * @author DydyBook
  */
-public class Joueur {
+public class Joueur implements java.io.Serializable{
     private String nom;
     private int nbTotemsValidés = 0;
     private Vector<Totem> TotemsValidés = new Vector<Totem>();
@@ -59,5 +59,10 @@ public class Joueur {
     //Permet d'ajouter un totem au vector
     public void AjoutTotem(Totem t){
         this.TotemsValidés.add(t);
+    }
+    
+    //Renvoie si le joueur possède déjà un totem
+    public Boolean HasTotem(Totem t){
+        return this.TotemsValidés.contains(t);
     }
 }

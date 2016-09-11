@@ -9,7 +9,7 @@ package duian;
  *
  * @author DydyBook
  */
-public class Totem {
+public class Totem implements java.io.Serializable{
     private String nom;
     private String element;
     private String categorie;
@@ -23,7 +23,7 @@ public class Totem {
     
     @Override
     public String toString(){
-        String s = "Trésor : "+this.nom+" ";
+        String s = this.nom+" ";
         
         if(this.element.compareTo("Eau") == 0){
             s += "de l'eau";
@@ -37,7 +37,7 @@ public class Totem {
         if(this.element.compareTo("Bois") == 0){
             s += "du bois";
         }
-        if(this.element.compareTo("Métal") == 0){
+        if(this.element.compareTo("Metal") == 0){
             s += "du métal";
         }
         return s+"\n";

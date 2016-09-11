@@ -1,0 +1,5 @@
+﻿Que peut signifier la ville de Shandong ?;A l’est de la montagne_A l’ouest de la montagne_Au nord de la montagne_Au sud de la montagne;A l’est de la montagne; « Shan » (山)  signifie « montagne » et « dong » (东) signifie « est »
+Quel est le nom en mandarin de HongKong ?;HongGang_HongKong_XiangGang_XiangKong;XiangGang ; « Xiang » (香) signifie « parfumé » et « gang » (港) signifie « port »
+Que peut signifier la ville de Pékin (Beijing) ?;Capitale du Sud_Capitale du Nord_Capitale de l’Est_Capitale de l’Ouest;Capitale du Nord; « Bei » (北)  signifie « nord » et « jing » (京) signifie « capitale »
+Que signifie « ZhongGuo » (Chine) en mandarin ?;Pays du Soleil Levant_Pays du Dessous_Pays du Milieu_Pays de l’Est;Pays du Milieu ; « Zhong » (中) signifie « milieu » et « guo » (国) signifie « pays »
+Que signifie « FaGuo » (France) en mandarin ?;Pays de la Loi_Pays du Milieu_Pays du Sud_Pays du Fromage; Pays de la Loi; « Fa » (法) signifie « loi » et « guo » (国) signifie « pays »

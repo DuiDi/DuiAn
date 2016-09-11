@@ -5,14 +5,12 @@
  */
 package duian;
 
-import java.awt.Button;
 import java.awt.Color;
-import java.awt.Insets;
 import java.util.TimerTask;
 import javax.swing.JButton;
-import java.util.Vector;
 import javax.swing.JOptionPane;
 import java.util.Timer;
+import java.io.*;
 
 /**
  *
@@ -75,14 +73,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         regionOuest.AjoutCategories(map.GetRegionSpec(regions[3]));
         
         //Assignation des totems à chaque catégorie
-        
-        //Assignation par catégorie
         regionNord.SetTotemsParCategorie("Tortue");
         regionSud.SetTotemsParCategorie("Phénix");
         regionEst.SetTotemsParCategorie("Dragon");
         regionOuest.SetTotemsParCategorie("Tigre");
         
         SetBoutonsRegionsInvisibles();
+        BoutonRetourMenu.setVisible(false);
+        BoutonRetourCategorie.setVisible(false);
     }
 
     /**
@@ -98,17 +96,15 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         LabelNomCategorie = new javax.swing.JLabel();
-        BoutonValider = new javax.swing.JButton();
-        PanelAide = new javax.swing.JPanel();
-        LabelAidePanda = new javax.swing.JLabel();
-        PanelQuestion = new javax.swing.JPanel();
-        LabelQuestion = new javax.swing.JLabel();
         ListeChoix = new javax.swing.JList<>();
         BoutonSauvegarder = new javax.swing.JButton();
-        PanelReponse = new javax.swing.JPanel();
-        LabelReponse = new javax.swing.JLabel();
         LabelResultatReponse = new javax.swing.JLabel();
+        LabelReponse = new javax.swing.JLabel();
+        LabelNumQuestion = new javax.swing.JLabel();
+        LabelQuestion = new javax.swing.JLabel();
+        BoutonValiderQuestion = new javax.swing.JButton();
         BoutonIndice = new javax.swing.JButton();
+        LabelAidePanda = new javax.swing.JLabel();
         LabelNomRegion = new javax.swing.JLabel();
         BoutonNord = new javax.swing.JButton();
         BoutonOuest = new javax.swing.JButton();
@@ -125,104 +121,75 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         ScrollEtatJoueur = new javax.swing.JScrollPane();
         ListeEtatJoueur = new javax.swing.JList<>();
         LabelEtatJoueur = new javax.swing.JLabel();
+        BoutonRetourMenu = new javax.swing.JButton();
+        BoutonRetourCategorie = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 102));
+        setPreferredSize(new java.awt.Dimension(1000, 462));
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 102));
+        jPanel7.setBackground(new java.awt.Color(255, 232, 37));
+        jPanel7.setAutoscrolls(true);
+        jPanel7.setPreferredSize(new java.awt.Dimension(1200, 462));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 153));
+        jTabbedPane1.setAutoscrolls(true);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 51));
+        jPanel1.setBackground(new java.awt.Color(249, 44, 142));
+        jPanel1.setAutoscrolls(true);
 
-        LabelNomCategorie.setFont(new java.awt.Font("Lucida Grande", 1, 16)); // NOI18N
+        LabelNomCategorie.setBackground(new java.awt.Color(255, 232, 37));
+        LabelNomCategorie.setFont(new java.awt.Font("New Peninim MT", 1, 16)); // NOI18N
         LabelNomCategorie.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelNomCategorie.setText("Catégorie");
         LabelNomCategorie.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        LabelNomCategorie.setOpaque(true);
 
-        BoutonValider.setText("Valider");
-        BoutonValider.addActionListener(new java.awt.event.ActionListener() {
+        ListeChoix.setBackground(new java.awt.Color(249, 44, 142));
+        ListeChoix.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        ListeChoix.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        ListeChoix.setForeground(new java.awt.Color(255, 255, 255));
+        ListeChoix.setLayoutOrientation(javax.swing.JList.VERTICAL_WRAP);
+
+        BoutonSauvegarder.setText("Sauvegarder");
+        BoutonSauvegarder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonValiderActionPerformed(evt);
+                BoutonSauvegarderActionPerformed(evt);
             }
         });
 
-        PanelAide.setBackground(new java.awt.Color(255, 204, 204));
+        LabelResultatReponse.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        LabelResultatReponse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelResultatReponse.setOpaque(true);
 
-        LabelAidePanda.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
-        LabelAidePanda.setAutoscrolls(true);
-        LabelAidePanda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout PanelAideLayout = new javax.swing.GroupLayout(PanelAide);
-        PanelAide.setLayout(PanelAideLayout);
-        PanelAideLayout.setHorizontalGroup(
-            PanelAideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelAidePanda, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
-        );
-        PanelAideLayout.setVerticalGroup(
-            PanelAideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelAideLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LabelAidePanda, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        PanelQuestion.setBackground(new java.awt.Color(255, 153, 102));
-
-        LabelQuestion.setBackground(new java.awt.Color(255, 153, 153));
-        LabelQuestion.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
-        LabelQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelQuestion.setAutoscrolls(true);
-
-        javax.swing.GroupLayout PanelQuestionLayout = new javax.swing.GroupLayout(PanelQuestion);
-        PanelQuestion.setLayout(PanelQuestionLayout);
-        PanelQuestionLayout.setHorizontalGroup(
-            PanelQuestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelQuestionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        PanelQuestionLayout.setVerticalGroup(
-            PanelQuestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelQuestionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        BoutonSauvegarder.setText("Sauvegarder");
-
-        PanelReponse.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        LabelReponse.setBackground(new java.awt.Color(0, 255, 204));
+        LabelReponse.setBackground(new java.awt.Color(203, 255, 204));
         LabelReponse.setFont(new java.awt.Font("Lucida Grande", 3, 13)); // NOI18N
         LabelReponse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelReponse.setText("Réponse");
+        LabelReponse.setOpaque(true);
 
-        LabelResultatReponse.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        LabelResultatReponse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelNumQuestion.setFont(new java.awt.Font("Myanmar MN", 0, 14)); // NOI18N
+        LabelNumQuestion.setForeground(new java.awt.Color(51, 51, 255));
+        LabelNumQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout PanelReponseLayout = new javax.swing.GroupLayout(PanelReponse);
-        PanelReponse.setLayout(PanelReponseLayout);
-        PanelReponseLayout.setHorizontalGroup(
-            PanelReponseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelReponseLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PanelReponseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelResultatReponse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelReponse, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        PanelReponseLayout.setVerticalGroup(
-            PanelReponseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelReponseLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelResultatReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LabelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
+        LabelQuestion.setBackground(new java.awt.Color(255, 226, 177));
+        LabelQuestion.setFont(new java.awt.Font("Iowan Old Style", 0, 18)); // NOI18N
+        LabelQuestion.setForeground(new java.awt.Color(255, 255, 255));
+        LabelQuestion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelQuestion.setAutoscrolls(true);
+        LabelQuestion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        BoutonValiderQuestion.setBackground(new java.awt.Color(106, 147, 160));
+        BoutonValiderQuestion.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        BoutonValiderQuestion.setForeground(new java.awt.Color(255, 255, 255));
+        BoutonValiderQuestion.setText("Valider");
+        BoutonValiderQuestion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonValiderQuestionActionPerformed(evt);
+            }
+        });
+
+        BoutonIndice.setBackground(new java.awt.Color(255, 255, 255));
         BoutonIndice.setText("Un indice ?");
         BoutonIndice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,67 +197,90 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
+        LabelAidePanda.setBackground(new java.awt.Color(255, 204, 204));
+        LabelAidePanda.setFont(new java.awt.Font("Lucida Grande", 0, 10)); // NOI18N
+        LabelAidePanda.setAutoscrolls(true);
+        LabelAidePanda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        LabelAidePanda.setOpaque(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(BoutonSauvegarder))
+                                .addGap(13, 13, 13)
+                                .addComponent(LabelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ListeChoix, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BoutonValider))
+                                .addContainerGap()
+                                .addComponent(ListeChoix, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BoutonSauvegarder)
+                            .addComponent(BoutonValiderQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(LabelResultatReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PanelAide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(19, 19, 19)
-                                        .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(PanelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(PanelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(1, 1, 1))
+                                        .addComponent(LabelAidePanda, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(LabelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(LabelNumQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(98, 98, 98))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNomCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BoutonSauvegarder))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(LabelNumQuestion, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(BoutonSauvegarder)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BoutonIndice)
-                            .addComponent(ListeChoix, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BoutonValider)
-                        .addContainerGap())
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(BoutonIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelResultatReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(LabelAidePanda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(PanelAide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(LabelQuestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(27, 27, 27)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(BoutonValiderQuestion))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ListeChoix, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                        .addComponent(LabelReponse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(39, 39, 39))
         );
 
         jTabbedPane1.addTab("Quiz", jPanel1);
 
-        LabelNomRegion.setFont(new java.awt.Font("Lucida Grande", 1, 20)); // NOI18N
+        LabelNomRegion.setBackground(new java.awt.Color(249, 44, 142));
+        LabelNomRegion.setFont(new java.awt.Font("Palatino", 1, 24)); // NOI18N
+        LabelNomRegion.setForeground(new java.awt.Color(255, 255, 255));
         LabelNomRegion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelNomRegion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(153, 153, 153)));
+        LabelNomRegion.setOpaque(true);
 
         BoutonNord.setActionCommand("Langue");
         BoutonNord.setLabel("Langue");
@@ -307,7 +297,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
-        BoutonSud.setText("Histoire et Géographie");
+        BoutonSud.setText("Histoire et Geographie");
         BoutonSud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonSudActionPerformed(evt);
@@ -321,14 +311,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             }
         });
 
-        BoutonValiderCategorie.setText("Valider");
+        BoutonValiderCategorie.setText("Sélectionner");
         BoutonValiderCategorie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonValiderCategorieActionPerformed(evt);
             }
         });
 
-        BoutonRevenirRegion.setText("Revenir au menu");
+        BoutonRevenirRegion.setText("Revenir au menu des régions");
         BoutonRevenirRegion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonRevenirRegionActionPerformed(evt);
@@ -343,7 +333,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         });
 
         LabelListeCategories.setBackground(new java.awt.Color(153, 153, 255));
-        LabelListeCategories.setFont(new java.awt.Font("Lucida Grande", 0, 15)); // NOI18N
+        LabelListeCategories.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         LabelListeCategories.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelListeCategories.setText("Catégories dédiées");
 
@@ -355,14 +345,37 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         });
 
         BoutonChargerPartie.setText("Charger une partie");
+        BoutonChargerPartie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonChargerPartieActionPerformed(evt);
+            }
+        });
 
-        ListeCategories.setBackground(new java.awt.Color(204, 204, 255));
+        ListeCategories.setBackground(new java.awt.Color(204, 177, 208));
+        ListeCategories.setFont(new java.awt.Font("Kohinoor Telugu", 0, 14)); // NOI18N
         ScrollCategorie.setViewportView(ListeCategories);
 
+        ListeEtatJoueur.setBackground(new java.awt.Color(255, 204, 153));
+        ListeEtatJoueur.setFont(new java.awt.Font("Malayalam MN", 0, 15)); // NOI18N
         ScrollEtatJoueur.setViewportView(ListeEtatJoueur);
 
         LabelEtatJoueur.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
+        LabelEtatJoueur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelEtatJoueur.setText("Joueur");
+
+        BoutonRetourMenu.setText("Revenir menu");
+        BoutonRetourMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourMenuActionPerformed(evt);
+            }
+        });
+
+        BoutonRetourCategorie.setText("Revenir aux catégories");
+        BoutonRetourCategorie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRetourCategorieActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -371,87 +384,92 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(BoutonRevenirRegion)
-                        .addGap(84, 84, 84)
-                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BoutonNouveauJeu)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BoutonChargerPartie)
+                                .addGap(135, 135, 135))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(BoutonRevenirRegion)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BoutonRetourCategorie)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BoutonQuitter))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
+                                .addContainerGap()
+                                .addComponent(BoutonRetourMenu))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(162, 162, 162)
                                 .addComponent(BoutonNord)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BoutonSud)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BoutonEst)
-                                .addGap(28, 28, 28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(BoutonOuest))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(38, 38, 38)
-                                        .addComponent(BoutonValiderCategorie))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
                                         .addContainerGap()
-                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                                .addComponent(LabelListeCategories, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(LabelEtatJoueur))
-                                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                                .addComponent(ScrollCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ScrollEtatJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(LabelListeCategories, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
-                                        .addComponent(BoutonNouveauJeu)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BoutonChargerPartie)))
+                                        .addGap(11, 11, 11)
+                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(LabelEtatJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(ScrollEtatJoueur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                                                    .addComponent(ScrollCategorie, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(BoutonValiderCategorie)))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 2, Short.MAX_VALUE)))
+                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoutonQuitter)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LabelNomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BoutonRevenirRegion)
-                            .addComponent(BoutonQuitter))))
+                            .addComponent(BoutonRetourCategorie))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BoutonNouveauJeu)
+                            .addComponent(BoutonChargerPartie))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BoutonNord)
                     .addComponent(BoutonSud)
                     .addComponent(BoutonEst)
-                    .addComponent(BoutonOuest))
+                    .addComponent(BoutonOuest)
+                    .addComponent(BoutonRetourMenu))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelListeCategories)
-                            .addComponent(LabelEtatJoueur))
+                        .addComponent(LabelListeCategories)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ScrollCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ScrollEtatJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ScrollCategorie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BoutonValiderCategorie))
+                        .addGap(15, 15, 15)
+                        .addComponent(LabelEtatJoueur)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BoutonValiderCategorie)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BoutonNouveauJeu)
-                            .addComponent(BoutonChargerPartie))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jTabbedPane1)
-                        .addContainerGap())))
+                        .addComponent(ScrollEtatJoueur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -460,14 +478,14 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 462, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -477,12 +495,29 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet de revenir au menu des régions
     private void BoutonRevenirRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRevenirRegionActionPerformed
         SetInvisibleHorsQuiz();//Eléménts rendus invisibles
-
         SetBoutonsRegionsVisibles();
+        
+        //Elément rendu visible
+        BoutonRetourMenu.setVisible(true);
+        
+        SetBoutonsMenuInvisible();
+        
+        LabelNomRegion.setText("Joueur : "+gamer.GetNom());//Affichage nom du joueur
+        
+        //On vide les champs du quiz
+        String[] vide = new String[4];
+        ListeChoix.setListData(vide);
+        LabelNomCategorie.setText("Catégorie");
+        LabelAidePanda.setText("");
+        LabelQuestion.setText("");
+        
     }//GEN-LAST:event_BoutonRevenirRegionActionPerformed
 
     //Permet de rentrer dans les catégories de la région Us & Coutumes
     private void BoutonEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonEstActionPerformed
+        
+        SetBoutonsCategorieVisible();//Affichage catégorie
+
         SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
 
         SetBoutonsRegionsInvisibles();
@@ -500,6 +535,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
 
     //Permet de rentrer dans les catégories de la région Histoire & Géographie
     private void BoutonSudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSudActionPerformed
+        
+        SetBoutonsCategorieVisible();//Affichage catégorie
+
         SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
         
         SetBoutonsRegionsInvisibles();
@@ -517,6 +555,9 @@ public final class AppliDuiAn extends javax.swing.JFrame {
 
     //Permet de rentrer dans les catégories de la région Culture pop moderne
     private void BoutonOuestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonOuestActionPerformed
+        
+        SetBoutonsCategorieVisible();//Affichage catégorie
+
         SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
 
         SetBoutonsRegionsInvisibles();
@@ -534,6 +575,8 @@ public final class AppliDuiAn extends javax.swing.JFrame {
 
     //Permet de rentrer dans les catégories de la région Langue
     private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
+        
+        SetBoutonsCategorieVisible();//Affichage catégorie
         SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
 
         SetBoutonsRegionsInvisibles(); 
@@ -553,33 +596,29 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     private void BoutonIndiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonIndiceActionPerformed
         
         //Eléments rendus visibles
-        PanelAide.setVisible(!PanelAide.isVisible());
         LabelAidePanda.setVisible(!LabelAidePanda.isVisible());
     }//GEN-LAST:event_BoutonIndiceActionPerformed
 
     //Permet de valider la catégorie une fois dans une région
     private void BoutonValiderCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValiderCategorieActionPerformed
         
+        ResetQuiz();//Remise à zéro
+        BoutonRetourMenu.setVisible(false);//Retrait
         AffichageSelonRegion();//Affichage des messages selon la région
+        AfficheEtatJeu(); //Affichage informations joueur
         
-        //DemarrerJeu = true; //On précise que le quiz de la catégorie commence
-        i = 0 ; //On réinitialise i à chaque retour à la catégorie
+        BoutonSauvegarder.setVisible(false);//Bouton rendu invisible
        
         GetQuiz();//Obtenir le quizz
         
-        //Afficher le totem à obtenir
-        LabelListeCategories.setText(cat.GetAnimal().toString());
-        
         //Eléments rendus invisibles
-        ScrollCategorie.setVisible(false);
-        ListeCategories.setVisible(false);
         BoutonValiderCategorie.setVisible(false);
-        PanelReponse.setVisible(false);
         LabelResultatReponse.setVisible(false);
         LabelReponse.setVisible(false);
         
         //Eléments rendus visibles
         SetVisibleQuiz();
+        BoutonRetourCategorie.setVisible(true);
         
     }//GEN-LAST:event_BoutonValiderCategorieActionPerformed
 
@@ -588,14 +627,86 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_BoutonQuitterActionPerformed
 
-    private void BoutonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValiderActionPerformed
+    private void BoutonValiderQuestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonValiderQuestionActionPerformed
         AfficheResultat();//Affiche le résultat
-    }//GEN-LAST:event_BoutonValiderActionPerformed
+    }//GEN-LAST:event_BoutonValiderQuestionActionPerformed
 
     private void BoutonNouveauJeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNouveauJeuActionPerformed
         
-        CreerJoueur();//Création joueur
+        //Si la partie n'a pas été chargé
+        if (!jeuChargé){
+            CreerJoueur();//Création joueur
+            BoutonRetourMenu.setVisible(true);//Affichage menu
+        }
+        else{
+            SetBoutonsRegionsVisibles();
+            SetBoutonsMenuInvisible();
+            AfficheEtatJeu();//Affichage informations joueur
+        }     
     }//GEN-LAST:event_BoutonNouveauJeuActionPerformed
+
+    private void BoutonSauvegarderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonSauvegarderActionPerformed
+        
+        File fichier = new File(cheminDossierPseudo+gamer.GetNom()+".ser");
+        
+        //Si le fichier n'existe pas
+        if(!fichier.exists()){
+            Sauvegarde(gamer.GetNom(), gamer);
+        }
+        else{
+            JOptionPane.showConfirmDialog(this,"Une partie a déjà été sauvegardée pour ce pseudo!\nSi vous souhaitez sauvegarder la partie en cours, cliquez sur OK. Sinon annulez l'opération", "Oh...", 3);
+            
+            //On demande au joueur s'il souhaite conserver ou non l'ancienne sauvegarde
+            int res = JOptionPane.showConfirmDialog(this,"Une partie a déjà été sauvegardée pour ce pseudo!\nSi vous souhaitez sauvegarder la partie en cours, cliquez sur OK. Sinon annulez l'opération", "Oh...", 3);
+            
+            if(res == JOptionPane.OK_OPTION){
+                Sauvegarde(gamer.GetNom(), gamer);
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Joueur " + gamer.GetNom() + ", aucune partie n'a été sauvegardée!", "Ancienne sauvegarde conservée!", 1);
+            }
+        }
+        
+    }//GEN-LAST:event_BoutonSauvegarderActionPerformed
+
+    private void BoutonChargerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonChargerPartieActionPerformed
+        //Variable locale
+        String nom = JOptionPane.showInputDialog("Votre pseudo : ");
+        
+        //Création fichier
+        File fichier = new File(cheminDossierPseudo+nom+".ser");
+        //JOptionPane.showInputDialog("Votre pseudo : ");
+        Joueur j = new Joueur();
+        
+        if(fichier.exists()){
+            //JOptionPane.showInputDialog("Votre meudo : ");
+            j = Chargement(nom);
+            
+           gamer = j;
+           BoutonNouveauJeu.setText("Reprendre partie");
+            jeuChargé = true;
+        }
+        else{
+            JOptionPane.showInputDialog("Votre jeudo : ");
+        }
+    }//GEN-LAST:event_BoutonChargerPartieActionPerformed
+
+    private void BoutonRetourMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourMenuActionPerformed
+        BoutonRetourMenu.setVisible(false);//Retrait bouton
+        SetBoutonsMenuVisible();
+        AfficheEtatJeu();//Affiche informations joueur
+    }//GEN-LAST:event_BoutonRetourMenuActionPerformed
+
+    private void BoutonRetourCategorieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRetourCategorieActionPerformed
+        int rep = JOptionPane.showConfirmDialog(this, "Le quiz sera interrompu et les données perdues...", "Attention!", 2);
+        
+        if(rep == JOptionPane.OK_OPTION){
+            JOptionPane.showMessageDialog(this, "Vous allez quitter la catégorie "+cat.GetNom(), "Retour aux catégories de "+regionTemp.GetNom(), 1);
+            SetBoutonsCategorieVisible();
+            ResetQuiz();
+        }
+        
+    }//GEN-LAST:event_BoutonRetourCategorieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -635,18 +746,24 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     
     //Permet de créer des boutons de choix
     public void CreerItemChoix(){
-        ListeChoix.setListData(choices[i]);
+        
+        //On applique le multiligne à chaque string du tableau
+        for(String s: choices[i]){
+            s = convertToMultiline(s);
+        }
+        ListeChoix.setListData(choices[i]);//On ajoute le tableau de string
     }
     
     //Permet de récupérer le quiz correspondant à la catégorie
     public void GetQuiz(){
         
-        BoutonValider.setText("Valider");//On demande de cliquer sur la question suivante
+        SetBoutonsCategorieInvisible();//Retrait affichage
+        
+        BoutonValiderQuestion.setText("Valider");//On demande de cliquer sur la question suivante
         
         //Eléments rendus ponctuellement invisibles
         LabelReponse.setVisible(false);
         LabelResultatReponse.setVisible(false);
-        PanelReponse.setVisible(false);
             
         //Tant qu'il y a encore des questions
         if(i < 5){
@@ -698,81 +815,87 @@ public final class AppliDuiAn extends javax.swing.JFrame {
             help = quiz.GetAides();
 
             //Affichage des informations
+            LabelNumQuestion.setText("Question "+(i+1));
             LabelNomCategorie.setText(cat.GetNom());
-            LabelQuestion.setText(queries[i]);
+            LabelQuestion.setText(convertToMultiline(queries[i]));
             LabelReponse.setText(answers[i]);
-            LabelAidePanda.setText(help[i]);
+            LabelAidePanda.setText(convertToMultiline(help[i]));
             CreerItemChoix();
             
             //Eléments rendus invisibles
             LabelAidePanda.setVisible(false);
-            PanelAide.setVisible(false);
         }
         //S'il n'y a plus de questions dans la catégorie
         else{
             AfficheEtatJeu(); //Affiche les informations actualisées sur le joueur
-            
-            SetInvisibleHorsQuiz(); //On n'affiche plus le quiz
-            
-            SetVisibleHorsQuizFInJeu(); //On affiche les catégories de la région
+            BoutonSauvegarder.setVisible(true); //On ne sauvegarde la partie que si on a réussi à valider la catégorie
+
             
             //Si le nombre d'erreurs est passable voire bas
             if (quiz.GetBonnesReponses() >= passable){
-                JOptionPane.showMessageDialog(this,"Vous avez eu " +quiz.GetBonnesReponses()+ "bonne(s) réponse(s)", "Fini", 1);
-                JOptionPane.showMessageDialog(this,"Vous avez obtenu le " +cat.GetAnimal().toString()+ " !", "Super !", 1);
-                BoutonSauvegarder.setVisible(true); //On ne sauvegarde la partie que si on a réussi à valider la catégorie
-                LabelNomCategorie.setText("Bravo !" +cat.GetAnimal().toString()+" obtenu");
+                if(gamer.HasTotem(cat.GetAnimal())){
+                    JOptionPane.showMessageDialog(this,"Vous avez déjà obtenu le \n" +cat.GetAnimal().toString()+ " !", "Oups... C'est gênant...", 0);
+
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Vous avez eu " +quiz.GetBonnesReponses()+ " bonne(s) réponse(s)", "Quiz terminé", 1);
+                    JOptionPane.showMessageDialog(this,"Vous avez obtenu le \n" +cat.GetAnimal().toString()+ " !", "Super !", 1);
+                    LabelNomCategorie.setText("Bravo !" +cat.GetAnimal().toString()+" obtenu");  
+                    
+                    //Mise à jour
+                    cat.SetValide(true);
+                    gamer.SetTotemsValidés(gamer.GetTotemsValidés()+1);
+                    gamer.AjoutTotem(cat.GetAnimal());
                 
-                cat.SetValide(true);
-                gamer.SetTotemsValidés(gamer.GetTotemsValidés()+1);
-                gamer.AjoutTotem(cat.GetAnimal());
+                    //On récupère la catégorie sélectionnée selon la région
+                    if(boutonTemp.getText().compareTo(regionNord.GetNom()) == 0){
+                        for(Categorie c: regionNord.categories){
+                            //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
+                            if(cat.GetNom().compareTo(c.GetNom()) == 0){
+                                c = cat;
+                            }
+                        }
+                    }
+                    else if(boutonTemp.getText().compareTo(regionSud.GetNom()) == 0){
+                        for(Categorie c: regionSud.categories){
+                            //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
+                            if(cat.GetNom().compareTo(c.GetNom()) == 0){
+                                c = cat;
+                            }
+                        }
+                    }
+                    else if(boutonTemp.getText().compareTo(regionOuest.GetNom()) == 0){
+                        for(Categorie c: regionOuest.categories){
+                            //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
+                            if(cat.GetNom().compareTo(c.GetNom()) == 0){
+                                c = cat;
+                            }
+                        }
+                    }
+                    else if(boutonTemp.getText().compareTo(regionEst.GetNom()) == 0){
+                        for(Categorie c: regionEst.categories){
+                            //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
+                            if(cat.GetNom().compareTo(c.GetNom()) == 0){
+                                c = cat;
+                            }
+                        }
+                    }
+                }
                 
-                //On récupère la catégorie sélectionnée selon la région
-                if(boutonTemp.getText().compareTo(regionNord.GetNom()) == 0){
-                    for(Categorie c: regionNord.categories){
-                        //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
-                        if(cat.GetNom().compareTo(c.GetNom()) == 0){
-                            c = cat;
-                        }
-                    }
-                }
-                else if(boutonTemp.getText().compareTo(regionSud.GetNom()) == 0){
-                    for(Categorie c: regionSud.categories){
-                        //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
-                        if(cat.GetNom().compareTo(c.GetNom()) == 0){
-                            c = cat;
-                        }
-                    }
-                }
-                else if(boutonTemp.getText().compareTo(regionOuest.GetNom()) == 0){
-                    for(Categorie c: regionOuest.categories){
-                        //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
-                        if(cat.GetNom().compareTo(c.GetNom()) == 0){
-                            c = cat;
-                        }
-                    }
-                }
-                else if(boutonTemp.getText().compareTo(regionEst.GetNom()) == 0){
-                    for(Categorie c: regionEst.categories){
-                        //Si la catégorie sélectionnée correspond au nom d'une catégorie de la région
-                        if(cat.GetNom().compareTo(c.GetNom()) == 0){
-                            c = cat;
-                        }
-                    }
-                }
+                SetBoutonsCategorieVisible();//Affichage
+                BoutonRetourCategorie.setVisible(false);//Retrait
+                
             }
             else{//Sinon le joueur a perdu
-                JOptionPane.showMessageDialog(this,"Désolé ! Vous n'avez eu que " +quiz.GetBonnesReponses()+ " bonne(s) réponse(s)", "Oups...", 0); //Affichage nombre d'erreurs
-                
-                CategoriePerdue();
+                JOptionPane.showMessageDialog(this,"Désolé ! Vous n'avez eu que " +quiz.GetBonnesReponses()+ " bonne(s) réponse(s)", "Oups...", 0); //Affichage nombre d'erreurs       
             }
             AfficheEtatJeu();
+            
         }
     }
     
     //Permet de rendre invisible certains éléments au menu
     public void SetInvisibleHorsQuiz(){
-        PanelAide.setVisible(false);
         LabelAidePanda.setVisible(false);
         BoutonIndice.setVisible(false);
         jTabbedPane1.setVisible(false);
@@ -780,42 +903,30 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelListeCategories.setVisible(false);
         LabelNomCategorie.setVisible(false);
         LabelReponse.setVisible(false);
-        PanelReponse.setVisible(false);
         BoutonRevenirRegion.setVisible(false);
         BoutonValiderCategorie.setVisible(false);
-        PanelReponse.setVisible(false);
         LabelQuestion.setVisible(false);
-        PanelQuestion.setVisible(false);
         LabelResultatReponse.setVisible(false);
         ScrollCategorie.setVisible(false);
         ListeEtatJoueur.setVisible(false);
         LabelEtatJoueur.setVisible(false);
         ScrollEtatJoueur.setVisible(false);
         BoutonSauvegarder.setVisible(false);
+        BoutonRetourCategorie.setVisible(false);
+        LabelNumQuestion.setVisible(false);
     }
     
     //Permet de rendre visible certains éléments au quiz
     public void SetVisibleQuiz(){
         BoutonIndice.setVisible(true);
         jTabbedPane1.setVisible(true);
-        ListeCategories.setVisible(true);
-        LabelListeCategories.setVisible(true);
         LabelNomCategorie.setVisible(true);
         BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
         LabelQuestion.setVisible(true);
-        PanelQuestion.setVisible(true);
-        ScrollCategorie.setVisible(true);
-    }
-    
-    //Permet de rendre visible certains éléments hors quiz fin jeu
-    public void SetVisibleHorsQuizFInJeu(){
-        ListeCategories.setVisible(true);
-        LabelListeCategories.setVisible(true);
-        LabelNomCategorie.setVisible(true);
-        BoutonRevenirRegion.setVisible(true);
-        BoutonValiderCategorie.setVisible(true);
-        ScrollCategorie.setVisible(true);
+        BoutonRetourCategorie.setVisible(true);
+        LabelNumQuestion.setVisible(true);
+        BoutonValiderQuestion.setVisible(true);
+        BoutonIndice.setVisible(true);
     }
     
     //Permet de rendre invisible les boutons des régions
@@ -846,50 +957,43 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         TimerTask tache = new TimerTask() {
             @Override
             public void run() {
-                if(i<5){//Le bouton Valider change de nom
-                    BoutonValider.setText("Question suivante");//On demande de cliquer sur la question suivante
-                }
                 //Eléments rendus ponctuellement invisibles
                 LabelReponse.setVisible(false);
                 LabelResultatReponse.setVisible(false);
-                PanelReponse.setVisible(false);
+                i++;
+                GetQuiz();
             }
         };
         
         
         //Si l'indice est inférieur au nombre d'éléments dans les tableaux de quiz
         if (i < 5){
-            //Si on veut passer à la question suivante
-            if(BoutonValider.getText().compareTo("Question suivante") == 0){
-                if(BoutonValiderCliqué){  
-                    i++;
-                    GetQuiz();//On affiche la question suivante
-                    BoutonValiderCliqué = false;//On remet le boutonValider à non cliqué
-                }
-            }
-            //Sinon
-            else{
-                BoutonValiderCliqué = true;//On précise le bouton valider a été cliqué
-                
-                //Vérification du résultat
-                if (repJoueur.compareTo(LabelReponse.getText()) == 0)
-                {
-                    LabelResultatReponse.setForeground(Color.BLUE);
-                    LabelResultatReponse.setText("Correct !");
-                    quiz.SetBonnesreponses();
-                }
-                else
-                {
-                    LabelResultatReponse.setForeground(Color.red);
-                    LabelResultatReponse.setText("Faux !");
-                }
-                //Affichage de la réponse
-                LabelReponse.setVisible(true);
-                LabelResultatReponse.setVisible(true);
-                PanelReponse.setVisible(true);
+           
+            BoutonValiderCliqué = true;//On précise le bouton valider a été cliqué
 
-                timer.schedule(tache, 1*1000);//Enclenchement du rendu invisible de certains éléments
+            //Vérification du résultat
+            if (repJoueur.compareTo(LabelReponse.getText()) == 0)
+            {
+                LabelResultatReponse.setForeground(Color.BLUE);
+                LabelResultatReponse.setText("Correct !");
+                quiz.SetBonnesreponses();
             }
+            else
+            {
+                LabelResultatReponse.setForeground(Color.red);
+                LabelResultatReponse.setText("Faux !");
+            }
+            //Affichage de la réponse
+            LabelReponse.setText(convertToMultiline(LabelReponse.getText()));
+            LabelReponse.setVisible(true);
+            LabelResultatReponse.setVisible(true);
+
+            timer.schedule(tache, 2*1000);//Enclenchement du rendu invisible de certains éléments
+       
+        }
+        else{
+            BoutonValiderQuestion.setText("Fin de quiz");
+            GetQuiz();
         }
     }
     
@@ -898,8 +1002,13 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         if(boutonTemp.getText().compareTo(regionNord.GetNom()) == 0){
             for(Categorie c: this.regionNord.categories){
                 if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
-                    
-                    JOptionPane.showMessageDialog(this, "Vous devez obtenir le "+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
+                    if(gamer.HasTotem(cat.GetAnimal())){
+                       JOptionPane.showMessageDialog(this, "Vous avez déjà le Trésor :\n"+c.GetAnimal().toString()+"!", "Catégorie : "+c.GetNom(), 1);
+
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "Vous devez obtenir le Trésor :\n"+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
+                    }
                      
                 } 
             }
@@ -907,27 +1016,39 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         if(boutonTemp.getText().compareTo(regionSud.GetNom()) == 0){
             for(Categorie c: this.regionSud.categories){
                 if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
-                    JOptionPane.showMessageDialog(this, "Vous devez obtenir le "+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
-                    
-                    
+                   if(gamer.HasTotem(cat.GetAnimal())){
+                       JOptionPane.showMessageDialog(this, "Vous avez déjà le Trésor :\n"+c.GetAnimal().toString()+"!", "Catégorie : "+c.GetNom(), 1);
+
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "Vous devez obtenir le Trésor :\n"+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
+                    }
                 } 
             }
         }
         if(boutonTemp.getText().compareTo(regionOuest.GetNom()) == 0){
             for(Categorie c: this.regionOuest.categories){
                 if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
-                    JOptionPane.showMessageDialog(this, "Vous devez obtenir le "+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
-                    
-                    
-                } 
+                  if(gamer.HasTotem(cat.GetAnimal())){
+                       JOptionPane.showMessageDialog(this, "Vous avez déjà le Trésor :\n"+c.GetAnimal().toString()+"!", "Catégorie : "+c.GetNom(), 1);
+
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "Vous devez obtenir le Trésor :\n"+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
+                    }
+                }
             }
         }
         if(boutonTemp.getText().compareTo(regionEst.GetNom()) == 0){
             for(Categorie c: this.regionEst.categories){
                 if(c.GetNom().compareTo(ListeCategories.getSelectedValue()) == 0){
-                    JOptionPane.showMessageDialog(this, "Vous devez obtenir le "+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
-                    
-                    
+                   if(gamer.HasTotem(cat.GetAnimal())){
+                       JOptionPane.showMessageDialog(this, "Vous avez déjà le Trésor :\n"+c.GetAnimal().toString()+"!", "Catégorie : "+c.GetNom(), 1);
+
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this, "Vous devez obtenir le Trésor :\n"+c.GetAnimal().toString(), "Catégorie : "+c.GetNom(), 1);
+                    }
                 } 
             }
         }
@@ -942,11 +1063,6 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         ListeEtatJoueur.setVisible(true);
         LabelEtatJoueur.setVisible(true);
         ScrollEtatJoueur.setVisible(true);
-    }
-    
-    //Permet de gérer lorsque le joueur a perdu
-    public void CategoriePerdue(){
-        
     }
     
     //Permet de créer un joueur
@@ -965,9 +1081,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,"Bienvenue " +nom + "!\nVous pouvez désormais jouer !", "Pseudo créé !", 1);
                     gamer.SetNom(nom);    //On donne un nom à l'objet Joueur créé
                     
-                    //Eléments rendus invisibles
-                    BoutonNouveauJeu.setVisible(false);
-                    BoutonChargerPartie.setVisible(false);
+                    SetBoutonsMenuInvisible();
                     
                     SetBoutonsRegionsVisibles();
                     AfficheEtatJeu();//Affichage informations joueur
@@ -981,6 +1095,104 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         }
     }
     
+    //Permet de sauvegarder une partie
+    public void Sauvegarde(String nomFichier, Joueur j){
+        
+        //Si tout va bien
+        try( //Création des objets pour la sérialisation
+           FileOutputStream fichierSortie = new FileOutputStream(cheminDossierPseudo+nomFichier+".ser"); 
+           ObjectOutputStream sortie = new ObjectOutputStream(fichierSortie)) {
+           
+           sortie.writeObject(j);//Objet sérialisé
+           
+           //Fermeture
+           sortie.close();
+           fichierSortie.close();
+           
+           //Message de sauvegarde réussie
+           JOptionPane.showMessageDialog(this,"Joueur " + j.GetNom() + ", votre partie a été sauvegardée!", "Sauvegarde réussie!",1);
+           
+        }
+        //Sinon erreur
+        catch(IOException e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    //Permet de charger une partie
+    public Joueur Chargement(String nomPseudo){
+        
+        //Création objet Joueur
+        Joueur j = new Joueur();
+        
+        //Si tout va bien
+        try( //Création des objets pour la sérialisation
+           FileInputStream fichierEntree = new FileInputStream(cheminDossierPseudo+nomPseudo+".ser"); 
+           ObjectInputStream entree = new ObjectInputStream(fichierEntree)) {
+           
+            try {
+                j = (Joueur) entree.readObject();//Objet désérialisé
+            }
+            catch (ClassNotFoundException cnfe) {
+                cnfe.printStackTrace();
+            }
+           
+            //Fermeture
+            entree.close();
+            fichierEntree.close();
+           
+           //Message de chargement réussi
+           JOptionPane.showMessageDialog(this,"Joueur " + j.GetNom() + ", votre partie est chargé!", "Chargement réussi!",1);
+    
+        }
+        catch(IOException e){
+            e.getMessage();
+            return null;
+        }
+        return j;
+    }
+    
+    //Permet de mettre à la ligne un texte trop long pour le label
+    public static String convertToMultiline(String s){
+        return "<html>" + s.replaceAll("\n", "<br>");
+    }
+    
+    //Rend invisible les boutons du menu
+    public void SetBoutonsMenuInvisible(){
+        BoutonNouveauJeu.setVisible(false);
+        BoutonChargerPartie.setVisible(false);
+    }
+    
+    //Rend visible les boutons du menu
+    public void SetBoutonsMenuVisible(){
+        BoutonChargerPartie.setVisible(true);
+        BoutonNouveauJeu.setVisible(true);
+    }
+    
+    //Rend invisible les éléments de catégorie
+    public void SetBoutonsCategorieInvisible(){
+        BoutonValiderCategorie.setVisible(false);
+        ScrollCategorie.setVisible(false);
+        ListeCategories.setVisible(false);
+        LabelListeCategories.setVisible(false);
+    }
+    
+    //Rend visible les éléments de catégorie
+    public void SetBoutonsCategorieVisible(){
+        BoutonValiderCategorie.setVisible(true);
+        ScrollCategorie.setVisible(true);
+        ListeCategories.setVisible(true);
+        LabelListeCategories.setVisible(true);
+    }
+    
+    //Reset quiz
+    public void ResetQuiz(){
+        //Remise à zéro
+        QCM newquiz = new QCM();
+        quiz = newquiz;
+        i = 0;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BoutonChargerPartie;
     private javax.swing.JButton BoutonEst;
@@ -989,25 +1201,25 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     private javax.swing.JButton BoutonNouveauJeu;
     private javax.swing.JButton BoutonOuest;
     private javax.swing.JButton BoutonQuitter;
+    private javax.swing.JButton BoutonRetourCategorie;
+    private javax.swing.JButton BoutonRetourMenu;
     private javax.swing.JButton BoutonRevenirRegion;
     private javax.swing.JButton BoutonSauvegarder;
     private javax.swing.JButton BoutonSud;
-    private javax.swing.JButton BoutonValider;
     private javax.swing.JButton BoutonValiderCategorie;
+    private javax.swing.JButton BoutonValiderQuestion;
     private javax.swing.JLabel LabelAidePanda;
     private javax.swing.JLabel LabelEtatJoueur;
     private javax.swing.JLabel LabelListeCategories;
     private javax.swing.JLabel LabelNomCategorie;
     private javax.swing.JLabel LabelNomRegion;
+    private javax.swing.JLabel LabelNumQuestion;
     private javax.swing.JLabel LabelQuestion;
     private javax.swing.JLabel LabelReponse;
     private javax.swing.JLabel LabelResultatReponse;
     private javax.swing.JList<String> ListeCategories;
     private javax.swing.JList<String> ListeChoix;
     private javax.swing.JList<String> ListeEtatJoueur;
-    private javax.swing.JPanel PanelAide;
-    private javax.swing.JPanel PanelQuestion;
-    private javax.swing.JPanel PanelReponse;
     private javax.swing.JScrollPane ScrollCategorie;
     private javax.swing.JScrollPane ScrollEtatJoueur;
     private javax.swing.JPanel jPanel1;
