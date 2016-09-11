@@ -1,0 +1,5 @@
+﻿De quelle religion est issue la médecine chinoise ?;Le taoïsme_Le shintoïsme_Le bouddhisme_Le christianisme;Le taoïsme;Le Yin (阴) et le Yang (阳) proviennent de la religion de la Voie ou du Dao (道).
+Combien existe-t-il d’éléments en médecine chinoise ?;Dix_Quatre_Trois_Cinq_Deux;Cinq;Dans ce jeu, combien y a-t-il de trésors par catégorie ?
+Que symbolise le Yin ?;Le masculin_Le féminin_L’animal_Le spirituel;Le féminin;Le Yin est souvent associée à la femme.
+Quelle couleur est le Yang ?;Bleu_Vert_Blanc_Noir;Blanc;Le Yang est symbole de lumière et de clarté.
+Comment s’appelle l’énergie produite par le mouvement du Yin et du Yang ?;Gong_Lei_Qi_Fu;Qi;Cela se prononce en français « tchi ». 

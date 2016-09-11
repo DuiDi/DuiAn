@@ -573,7 +573,7 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     //Permet de rentrer dans les catégories de la région Langue
     private void BoutonNordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonNordActionPerformed
         
-        ResetQuiz();
+        //ResetQuiz();
         SetBoutonsCategorieVisible();//Affichage catégorie
         SetVisibleQuiz();//Affichage des éléments nécessaires au quiz
        
@@ -920,6 +920,10 @@ public final class AppliDuiAn extends javax.swing.JFrame {
         LabelNumQuestion.setVisible(true);
         BoutonValiderQuestion.setVisible(true);
         BoutonIndice.setVisible(true);
+        BoutonValiderCategorie.setVisible(true);
+        ScrollCategorie.setVisible(true);
+        ListeCategories.setVisible(true);
+        LabelListeCategories.setVisible(true);
     }
     
     //Permet de rendre invisible les boutons des régions
@@ -1185,18 +1189,18 @@ public final class AppliDuiAn extends javax.swing.JFrame {
     
     //Rend invisible les éléments de catégorie
     public void SetBoutonsCategorieInvisible(){
-        BoutonValiderCategorie.setVisible(false);
+       /* BoutonValiderCategorie.setVisible(false);
         ScrollCategorie.setVisible(false);
         ListeCategories.setVisible(false);
-        LabelListeCategories.setVisible(false);
+        LabelListeCategories.setVisible(false);*/
     }
     
     //Rend visible les éléments de catégorie
     public void SetBoutonsCategorieVisible(){
-        BoutonValiderCategorie.setVisible(true);
+       /* BoutonValiderCategorie.setVisible(true);
         ScrollCategorie.setVisible(true);
         ListeCategories.setVisible(true);
-        LabelListeCategories.setVisible(true);
+        LabelListeCategories.setVisible(true);*/
     }
     
     //Reset quiz

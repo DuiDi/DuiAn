@@ -1,0 +1,5 @@
+﻿Quelle question peut poser un Chinois sans indiscrétion?;Combien gagnez-vous ?_Êtes-vous célibataire ?_Quel âge avez-vous ?_Quel est votre parti politique ?;Combien gagnez-vous ?;L’argent est un sujet de conversation très trivial.
+Que ne faut-il pas demander à une femme ?;Un mouchoir_Son âge_Sa taille_Son origine ;Son âge;Une jeune femme de 25 ans qui n’est pas mariée est considérée comme une vieille fille.
+De quelle région de la Chine faut-il éviter de parler ?;Hong Kong MacaoTibet_Canton;Tibet; La libération du Tibet par le gouvernement chinois est un sujet très sensible.
+De quoi pouvez-vous aisément discuter avec un Chinois ?;De politique_De sexualité_De nourriture_Du Tibet;De nourriture;La nourriture a une place très importante dans la vie chinoise.
+Quel langue parlent en général les familles chinoises entre elles ?;Le mandarin_Leur dialecte_L’anglais_Le français;Leur dialecte;Il existe un dialecte local dans chaque province chinoise.

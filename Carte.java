@@ -13,7 +13,7 @@ public class Carte {
     String[] regions = {"Langue", "Histoire et Geographie", "Us & Coutumes","Culture pop moderne"};
     String[] regionNord = {"Cles", "Salutation", "Chiffres","Couleurs", "Villes de Chine et pays"};
     String[] regionSud = {"Geographie physique", "Geopolitique", "Grandes batailles & evenements marquants","Personnages celebres", "Art & Litterature"};
-    String[] regionEst = {"Fetes chinoises", "Politesse", "Conversation","Ethnies", "Religion"};
+    String[] regionEst = {"Fetes chinoises", "Politesse", "Conversation","Medecine chinoise", "Alimentation"};
     String[] regionOuest = {"Cinema", "Musique", "Jeux","Patrimoine", "Science & technologie"};
     
     //Renvoie le tableau des catégories corrrespondant
